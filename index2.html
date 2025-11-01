@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        /* Căn chỉnh hình ảnh slideshow */
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Phần sách */
+        .book-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ✅ Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MyBookStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item ms-3">
+                        <form class="d-flex" role="search" onsubmit="return false;">
+                            <input class="form-control me-2" type="search" placeholder="Tìm kiếm sách..."
+                                aria-label="Search" id="searchInput2" style="max-width: 200px;" />
+                            <button class="btn btn-outline-light" type="submit" id="searchBtn">
+                                🔍
+                            </button>
+                        </form>
+                    </li>
+
+
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./login.html">LogIn</a></li>
+
+
+ 
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ✅ Carousel (3 ảnh chạy từ phải qua trái) -->
+<div id="bookCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./img/headerhome1.jpg" class="d-block w-100" alt="Book 1">
+    </div>
+    <div class="carousel-item">
+      <img src="./img/headerhome2.jpg" class="d-block w-100" alt="Book 2">
+    </div>
+    <div class="carousel-item">
+      <img src="./img/headerhome3.jpg" class="d-block w-100" alt="Book 3">
+    </div>
+  </div>
+
+ 
+  <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+ 
+  <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+    <!-- ✅ Phần danh sách sách -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Danh Sách Sách</h2>
+                <div class="text-center mb-4">
+            <button class="btn btn-outline-primary filter-btn" data-category="all">Tất cả</button>
+            <button class="btn btn-outline-primary filter-btn" data-category="kynang">Kỹ năng sống</button>
+            <button class="btn btn-outline-primary filter-btn" data-category="vanhoc">Văn học</button>
+            <button class="btn btn-outline-primary filter-btn" data-category="tamly">Tâm lý - Phát triển bản
+                thân</button>
+            <button class="btn btn-outline-primary filter-btn" data-category="thieunhi">Thiếu nhi</button>
+            <button class="btn btn-outline-primary filter-btn" data-category="ngoaingu">Ngoại ngữ</button>
+        </div>
+        <div class="row g-4">
+        <div class="row g-4">
+
+            <!-- 1 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/dacnhantam.webp" class="card-img-top" alt="Đắc Nhân Tâm">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Đắc Nhân Tâm</h6>
+                        <p class="text-muted small">Tác giả: Dale Carnegie</p>
+                        <p>Giá: <strong>50,000₫</strong></p>
+                        <p>Số trang: 319</p>
+                        <p>Lượt bán: 2.5k</p>
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/trenduongbang.webp" class="card-img-top" alt="Trên Đường Băng">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Trên Đường Băng</h6>
+                        <p class="text-muted small">Tác giả: Tony Buổi Sáng</p>
+                        <p>Giá: <strong>50,000₫</strong></p>
+                        <p>Số trang: 301</p>
+                        <p>Lượt bán: 3.8k</p>
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/thinkandgrowrich.webp" class="card-img-top" alt="Think And Grow Rich">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Think And Grow Rich</h6>
+                        <p class="text-muted small">Tác giả: Napoleon Hill</p>
+                        <p>Giá: <strong>70,000₫</strong></p>
+                        <p>Số trang: 399</p>
+                        <p>Lượt bán: 4.2k</p>
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/vanxuan.webp" class="card-img-top" alt="Vạn Xuân">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Vạn Xuân</h6>
+                        <p class="text-muted small">Tác giả: Yveline Feray</p>
+                        <p>Giá: <strong>800,000₫</strong></p>
+                        <p>Số trang: 1213</p>
+                        <p>Lượt bán: 1.1k</p>
+                        <p>⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/tuoitredanggiabaonhieu.webp" class="card-img-top" alt="Tuổi Trẻ Đáng Giá Bao Nhiêu">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Tuổi Trẻ Đáng Giá Bao Nhiêu</h6>
+                        <p class="text-muted small">Tác giả: Rosie Nguyễn</p>
+                        <p>Giá: <strong>50,000₫</strong></p>
+                        <p>Số trang: 285</p>
+                        <p>Lượt bán: 5.3k</p>
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/7thoiquenthanhdat.webp" class="card-img-top" alt="7 Thói Quen Thành Đạt">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">7 Thói Quen Thành Đạt</h6>
+                        <p class="text-muted small">Tác giả: Stephen R. Covey</p>
+                        <p>Giá: <strong>70,000₫</strong></p>
+                        <p>Số trang: 440</p>
+                        <p>Lượt bán: 3.6k</p>
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/nhungtrietgiathienchuagiaotheki20.webp" class="card-img-top"
+                        alt="Những Triết Gia Thiên Chúa Giáo Thế Kỷ XX">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Những Triết Gia Thiên Chúa Giáo Thế Kỷ XX</h6>
+                        <p class="text-muted small">Tác giả: Phan Quang Định</p>
+                        <p>Giá: <strong>140,000₫</strong></p>
+                        <p>Số trang: 658</p>
+                        <p>Lượt bán: 1.2k</p>
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/lichsucacloaivukhithanhchothieunien.webp" class="card-img-top"
+                        alt="Lịch Sử Các Loại Vũ Khí">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Lịch Sử Các Loại Vũ Khí</h6>
+                        <p class="text-muted small">Tác giả: Will Fowler</p>
+                        <p>Giá: <strong>140,000₫</strong></p>
+                        <p>Số trang: 130</p>
+                        <p>Lượt bán: 900</p>
+                        <p>⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/10vancauhoivisao.webp" class="card-img-top" alt="10 Vạn Câu Hỏi Vì Sao">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">10 Vạn Câu Hỏi Vì Sao</h6>
+                        <p class="text-muted small">Tác giả: Trung Tâm Xuất Bản Biên Tập</p>
+                        <p>Giá: <strong>250,000₫</strong></p>
+                        <p>Số trang: 7 tập</p>
+                        <p>Lượt bán: 4.7k</p>
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/tudiencachdungtienganh.webp" class="card-img-top" alt="Tôi Tài Giỏi, Bạn Cũng Thế!">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Từ Điển Cách Dùng Tiếng Anh</h6>
+                        <p class="text-muted small">Tác giả: Lê Đình Bì</p>
+                        <p>Giá: <strong>180,000₫</strong></p>
+                        <p>Số trang: 967</p>
+                        <p>Lượt bán: 6.2k</p>
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/hoacucxanh.jpg" class="card-img-top" alt="Tôi Tài Giỏi, Bạn Cũng Thế!">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Hoa Cúc Xanh</h6>
+                        <p class="text-muted small">Tác giả: Karel Capek</p>
+                        <p>Giá: <strong>85,000₫</strong></p>
+                        <p>Số trang: 340</p>
+                        <p>Lượt bán: 6.2k</p>
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="col-md-3">
+                <div class="card book-card shadow-sm">
+                    <img src="./img/toinoigikhinoivechaybo.jpg" class="card-img-top" alt="Tôi Tài Giỏi, Bạn Cũng Thế!">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">Tôi Nói Gì Khi Nói Về Chạy Bộ</h6>
+                        <p class="text-muted small">Tác giả: Haruki Murakami</p>
+                        <p>Giá: <strong>74,000₫</strong></p>
+                        <p>Số trang: 235</p>
+                        <p>Lượt bán: 6.2k</p>
+                        <p>⭐️⭐️⭐️⭐️⭐️</p>
+                        <button class="btn btn-sm btn-primary">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ✅ Phân trang -->
+ <nav class="d-flex flex-column align-items-center my-4">
+  <ul class="pagination pagination-lg">
+    <li class="page-item disabled"><a class="page-link" href="javascript:void(0)">‹</a></li>
+    <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0)">›</a></li>
+  </ul>
+  <div class="info-text mt-2">Hiển thị 1–5 của 25 khách hàng</div>
+</nav>
+
+
+            
+ 
+
+
+    <!-- ✅ Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">© 2025 MyBookStore | Designed by Anh Phúc đẹp trai 😎</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+
+    <script src="./js/index.js"></script>
+
+</html>

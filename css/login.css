@@ -1,0 +1,51 @@
+body {
+  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  transform: scale(0.9);   /* 👈 Giảm kích thước tổng thể */
+  max-width: 800px;        /* 👈 Giới hạn chiều ngang form */
+  margin: auto;            /* Căn giữa */
+}
+
+.card img {
+  height: 220px;           
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.8rem 2rem;
+}
+
+.card-title {
+  font-size: 1.5rem;       
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #2c3e50;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.form-control {
+  font-size: 1rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+}
+
+.btn-success {
+  font-size: 1.1rem;
+  padding: 0.6rem;
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-success:hover {
+  background-color: #28a745cc;
+  transform: translateY(-2px);
+}
