@@ -1,0 +1,39 @@
+.navbar{
+    background-color: black;
+} 
+.navbar .nav-item {
+    color: white; 
+    position: relative;
+    text-align: center;
+}
+.content{
+    font-size: 160%;
+}
+.page-number{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
+.page-number .page-item{
+    color: black;
+    border: black solid 1px;
+    padding: 0px 7px;
+    font-size: 20px;
+    margin: 3px;
+}
+.page-number .local-page{
+    background-color: black;
+    color: white;
+}
+@media (min-width: 760px) {
+    .content {
+        margin-top: 120px;
+        margin-left: 250px;
+        padding: 20px;
+    }
+}
+@media (max-width: 760px) {
+    .content{
+        margin-top: 120px;
+    }
+}
