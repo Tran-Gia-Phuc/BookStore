@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý người dùng</title>
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link rel="stylesheet" href="./css/manageUser.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
+
+
+</head>
+
+<body>
+    <header>
+        <!-- giữ nguyên sidebar của bạn -->
+        <div class="sidebar-content fixed-top">
+            <input type="checkbox" id="checkbox" />
+            <label for="checkbox">
+                <i class="fas fa-bars" id="open"></i>
+                <i class="fas fa-times" id="close"></i>
+            </label>
+            <div class="sidebar">
+                <ul>
+                    <li>
+                        <a href="./index.html"><ion-icon name="grid-outline"></ion-icon> Tổng quan</a>
+                    </li>
+                    <li id="active">
+                        <a href="./manageUser.html"><ion-icon name="people-outline"></ion-icon> Quản lý người dùng</a>
+                    </li>
+                    <li>
+                        <a href="./manageProduct.html"><ion-icon name="book-outline"></ion-icon> Quản lý sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="./manageCategory.html"><ion-icon name="bookmarks-outline"></ion-icon> Quản lý danh
+                            mục</a>
+                    </li>
+                    <li>
+                        <a href="./managerImport.html"><ion-icon name="cube-outline"></ion-icon> Quản lý nhập hàng</a>
+                    </li>
+                    <li>
+                        <a href="./managePrice.html"><ion-icon name="cash-outline"></ion-icon> Quản lý giá bán</a>
+                    </li>
+                    <li>
+                        <a href="./manageOrder.html"><ion-icon name="cart-outline"></ion-icon> Quản lý đơn hàng</a>
+                    </li>
+                    <li>
+                        <a href="./manageInventory.html"><ion-icon name="archive-outline"></ion-icon> Quản lý tồn
+                            kho</a>
+                    </li>
+                    <li>
+                        <a href="./login.html"><ion-icon name="log-out-outline"></ion-icon> Đăng xuất</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- chỉnh lại navbar -->
+        <nav class="navbar fixed-top">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+                <h2>Quản lý người dùng</h2>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search..." />
+                    </div>
+                    <div class="icon-group">
+                        <i class="fas fa-bell"></i>
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="content mt-5 pt-5">
+        <div class="container-fluid mt-5">
+            <div class="card shadow-sm p-4 mb-4">
+                <h5 class="mb-3 fw-bold">Tìm kiếm khách hàng</h5>
+                <form class="row g-3">
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" placeholder="Họ và tên" />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="email" class="form-control" placeholder="Email" />
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" placeholder="Số điện thoại" />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" placeholder="Địa chỉ" />
+                    </div>
+                    <div class="col-md-1">
+                        <select class="form-select">
+                            <option selected>Trạng thái</option>
+                            <option>Mở</option>
+                            <option>Khóa</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-success" id="search-user"><ion-icon name="search-outline"></ion-icon>
+                        Tìm</button>
+                </form>
+            </div>
+            <div class="card shadow-sm p-4">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">STT</th>
+                                <th scope="col">Khách hàng</th>
+                                <th scope="col">Tài khoản</th>
+                                <th scope="col">Số điện thoại</th>
+                                <th scope="col">Địa chỉ</th>
+                                <th scope="col">Tổng đơn hàng</th>
+                                <th scope="col">Ngày tạo</th>
+                                <th scope="col">Trạng thái</th>
+                                <th scope="col">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div class="fw-bold">Nguyễn Văn A</div>
+                                    <small class="text-muted">a.nguyen@example.com</small>
+                                </td>
+                                <td>nguyenvana</td>
+                                <td>0901234567</td>
+                                <td>Hà Nội</td>
+                                <td>12</td>
+                                <td>01/09/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger">Khóa</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div class="fw-bold">Trần Thị B</div>
+                                    <small class="text-muted">b.tran@example.com</small>
+                                </td>
+                                <td>tranthib</td>
+                                <td>0987654321</td>
+                                <td>TP.HCM</td>
+                                <td>8</td>
+                                <td>14/08/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger">Khóa</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div class="fw-bold">Lê Minh C</div>
+                                    <small class="text-muted">c.le@example.com</small>
+                                </td>
+                                <td>leminhc</td>
+                                <td>0912345678</td>
+                                <td>Đà Nẵng</td>
+                                <td>15</td>
+                                <td>22/07/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger">Khóa</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <div class="fw-bold">Phạm Thị D</div>
+                                    <small class="text-muted">d.pham@example.com</small>
+                                </td>
+                                <td>phamthid</td>
+                                <td>0934567890</td>
+                                <td>Cần Thơ</td>
+                                <td>6</td>
+                                <td>05/09/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-success">Mở</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <div class="fw-bold">Hoàng Văn E</div>
+                                    <small class="text-muted">e.hoang@example.com</small>
+                                </td>
+                                <td>hoangvane</td>
+                                <td>0976543210</td>
+                                <td>Huế</td>
+                                <td>9</td>
+                                <td>30/08/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger">Khóa</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <nav>
+                <ul class="pagination pagination-lg">
+                    <li class="page-item disabled"><a class="page-link" href="#">‹</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">›</a></li>
+                </ul>
+                <div class="info-text">Hiển thị 1–5 của 25 khách hàng</div>
+            </nav>
+        </div>
+        <script>
+            const pagination = document.querySelector(".pagination");
+            const pageItems = pagination.querySelectorAll(".page-item");
+            const infoText = document.querySelector(".info-text");
+
+            pagination.addEventListener("click", function (e) {
+                e.preventDefault();
+                const target = e.target.closest(".page-link");
+                if (!target) return;
+
+                const li = target.parentElement;
+                if (li.classList.contains("disabled")) return;
+
+                const currentActive = pagination.querySelector(".page-item.active");
+                const pages = Array.from(pageItems).filter(
+                    (item) => !item.querySelector(".page-link").textContent.match(/[‹›]/)
+                );
+
+                let currentPage = pages.indexOf(currentActive);
+                if (target.textContent === "‹" && currentPage > 0) {
+                    currentPage--;
+                } else if (target.textContent === "›" && currentPage < pages.length - 1) {
+                    currentPage++;
+                } else if (!["‹", "›"].includes(target.textContent)) {
+                    currentPage = parseInt(target.textContent) - 1;
+                }
+
+                pageItems.forEach((item) => item.classList.remove("active"));
+                pages[currentPage].classList.add("active");
+
+                pageItems[0].classList.toggle("disabled", currentPage === 0);
+                pageItems[pageItems.length - 1].classList.toggle(
+                    "disabled",
+                    currentPage === pages.length - 1
+                );
+
+                const start = currentPage * 5 + 1;
+                const end = Math.min(start + 4, 100);
+                infoText.textContent = `Hiển thị ${start}–${end} của 15 khách hàng`;
+            });
+        </script>
+
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

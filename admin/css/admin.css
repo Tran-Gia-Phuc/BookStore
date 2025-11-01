@@ -25,6 +25,39 @@
     background-color: black;
     color: white;
 }
+
+body {
+    background-color: #f5f6fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+nav.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px 40px;
+}
+
+.navbar h2 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 0;
+}
+
+.search-box input {
+    border-radius: 25px;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    width: 200px;
+}
+
+.icon-group i {
+    font-size: 18px;
+    margin-left: 15px;
+    color: #2c3e50;
+    cursor: pointer;
+}
+
+
 @media (min-width: 760px) {
     .content {
         margin-top: 120px;
