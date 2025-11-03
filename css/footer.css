@@ -1,0 +1,18 @@
+/* footer.css */
+#footer-container {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+#footer-container h5, 
+#footer-container p {
+  color: #f0f0f0;
+}
+
+#footer-container .social-icons a:hover {
+  color: #ffcc00;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
