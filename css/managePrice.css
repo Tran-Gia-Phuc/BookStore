@@ -1,0 +1,153 @@
+
+/* managePrice.css */
+
+/* =======================
+   Reset cơ bản
+======================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* =======================
+   Navbar
+======================= */
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.navbar h2 {
+    font-size: 1.8rem;
+    color: #343a40;
+    margin: 0;
+}
+
+.search-box input {
+    padding: 0.4rem 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    width: 200px;
+}
+
+/* =======================
+   Tabs
+======================= */
+.nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 1rem;
+}
+
+.nav-tabs .nav-link {
+    font-weight: 600;
+    color: #495057;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-right: 0.2rem;
+    background-color: #e9ecef;
+    transition: 0.3s;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #0d6efd;
+    color: #fff;
+    font-weight: 700;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* =======================
+   Card
+======================= */
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 2rem;
+    background-color: #fff;
+}
+
+/* =======================
+   Tables
+======================= */
+.table thead.table-dark th {
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    text-align: center;
+}
+
+.table tbody td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f3f5;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+/* =======================
+   Form
+======================= */
+form input, form select {
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #ced4da;
+}
+
+/* =======================
+   Tra cứu tab
+======================= */
+#lookup form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 768px) {
+    .navbar h2 {
+        font-size: 1.4rem;
+    }
+
+    .search-box input {
+        width: 120px;
+    }
+
+    .nav-tabs .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}

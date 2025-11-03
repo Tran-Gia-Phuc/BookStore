@@ -8,11 +8,8 @@
     <link rel="stylesheet" href="./css/sidebar.css" />
     <link rel="stylesheet" href="./css/admin.css" />
     <link rel="stylesheet" href="./css/manageProduct.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
-
-
 </head>
 
 <body>
@@ -25,52 +22,22 @@
             </label>
             <div class="sidebar">
                 <ul>
-                    <li>
-                        <a href="./index.html"><ion-icon name="grid-outline"></ion-icon> Tổng quan</a>
-                    </li>
-                    <li>
-                        <a href="./manageUser.html"><ion-icon name="people-outline"></ion-icon> Quản lý người dùng</a>
-                    </li>
-                    <li id="active">
-                        <a href="./manageProduct.html"><ion-icon name="book-outline"></ion-icon> Quản lý sản phẩm</a>
-                    </li>
-                    <li>
-                        <a href="./manageCategory.html"><ion-icon name="bookmarks-outline"></ion-icon> Quản lý danh
-                            mục</a>
-                    </li>
-                    <li>
-                        <a href="./manageOrder.html"><ion-icon name="cart-outline"></ion-icon> Quản lý đơn hàng</a>
-                    </li>
-                    <li>
-                        <a href="./managerImport.html"><ion-icon name="cube-outline"></ion-icon> Quản lý nhập hàng</a>
-                    </li>
-                    <li>
-                        <a href="./managePrice.html"><ion-icon name="cash-outline"></ion-icon> Quản lý giá bán</a>
-                    </li>
-                    <li>
-                        <a href="./manageInventory.html"><ion-icon name="archive-outline"></ion-icon> Quản lý tồn
-                            kho</a>
-                    </li>
-                    <li>
-                        <a href="./login.html"><ion-icon name="log-out-outline"></ion-icon> Đăng xuất</a>
-                    </li>
+                    <li><a href="./index.html"><ion-icon name="grid-outline"></ion-icon> Tổng quan</a></li>
+                    <li><a href="./manageUser.html"><ion-icon name="people-outline"></ion-icon> Quản lý người dùng</a></li>
+                    <li id="active"><a href="./manageProduct.html"><ion-icon name="book-outline"></ion-icon> Quản lý sản phẩm</a></li>
+                    <li><a href="./manageCategory.html"><ion-icon name="bookmarks-outline"></ion-icon> Quản lý danh mục</a></li>
+                    <li><a href="./manageOrder.html"><ion-icon name="cart-outline"></ion-icon> Quản lý đơn hàng</a></li>
+                    <li><a href="./managerImport.html"><ion-icon name="cube-outline"></ion-icon> Quản lý nhập hàng</a></li>
+                    <li><a href="./managePrice.html"><ion-icon name="cash-outline"></ion-icon> Quản lý giá bán</a></li>
+                    <li><a href="./manageInventory.html"><ion-icon name="archive-outline"></ion-icon> Quản lý tồn kho</a></li>
+                    <li><a href="./login.html"><ion-icon name="log-out-outline"></ion-icon> Đăng xuất</a></li>
                 </ul>
-
             </div>
         </div>
 
         <nav class="navbar fixed-top">
             <div class="container-fluid d-flex align-items-center justify-content-between">
                 <h2>Quản lý sản phẩm</h2>
-                <div class="d-flex align-items-center gap-3">
-                    <div class="search-box">
-                        <input type="text" placeholder="Search..." />
-                    </div>
-                    <div class="icon-group">
-                        <i class="fas fa-bell"></i>
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                </div>
             </div>
         </nav>
     </header>
@@ -78,205 +45,84 @@
     <section class="content mt-5 pt-5">
         <div class="container-fluid mt-5">
             <div class="card shadow-sm p-4 mb-4">
-                <h5 class="mb-3 fw-bold">Tìm kiếm sản phẩm</h5>
-                <form class="row g-3">
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" placeholder="Nhập theo tên" />
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" placeholder="Nhập theo tác giả" />
-                    </div>
-                    <div class="col-md-3">
-                        <select class="form-select">
-                            <option selected>--Danh mục--</option>
-                            <option>Văn học</option>
-                            <option>Tiểu thuyết</option>
-                            <option>Tiểu thuyết</option>
-                            <option>Tiểu thuyết</option>
-                            <option>Tiểu thuyết</option>
-                            <option>Tiểu thuyết</option>
-                            <option>Tiểu thuyết</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn btn-success" id="search-user"><ion-icon name="search-outline"></ion-icon> Tìm
-                            kiếm</button>
-                    </div>
-                </form>
-            </div>
-            <div class="d-flex justify-content-end p-3">
-                <button type="button"
-                    class="btn btn-lg btn-warning d-flex justify-content-between align-items-center fs-4 fw-semibold text-light"><ion-icon
-                        name="add-circle-sharp"></ion-icon> Thêm sản phẩm</button>
-            </div>
-            <div class="card shadow-sm p-4">
                 <div class="table-responsive">
                     <table class="table table-hover align-middle">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">STT</th>
-                                <th scope="col">Tên sách</th>
-                                <th scope="col">Danh mục</th>
-                                <th scope="col">Hình ảnh</th>
-                                <th scope="col">Giá tiền</th>
-                                <th scope="col">Số lượng</th>
-                                <th scope="col">Ngày tạo</th>
-                                <th scope="col">Thao tác</th>
+                                <th>STT</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Danh mục</th>
+                                <th>Giá vốn</th>
+                                <th>Giá bán</th>
+                                <th>Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>
-                                    <div class="fw-bold">Tuổi Trẻ Đáng Giá Bao Nhiêu</div>
-                                    <small class="text-muted">Rosie Nguyễn</small>
-                                </td>
-                                <td>Phát triển bản thân</td>
-                                <td><img src="./image/ptbt_tuoi-tre-dang-gia-bao-nhieu.jpg" width="60"></td>
-                                <td>95.000₫</td>
-                                <td>120</td>
-                                <td>2023-05-12</td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
-                                    <button class="btn btn-sm btn-danger">Xóa</button>
-                                </td>
+                                <td>iPhone 15</td>
+                                <td>Điện thoại</td>
+                                <td>20.000.000₫</td>
+                                <td>23.600.000₫</td>
+                                <td><button class="btn btn-sm btn-primary edit-product">Sửa</button></td>
                             </tr>
-
                             <tr>
                                 <td>2</td>
-                                <td>
-                                    <div class="fw-bold">Đắc Nhân Tâm</div>
-                                    <small class="text-muted">Dale Carnegie</small>
-                                </td>
-                                <td>Kỹ năng sống</td>
-                                <td><img src="./image/kns_Đắc-nhân-tâm.jpg" width="60"></td>
-                                <td>86.000₫</td>
-                                <td>200</td>
-                                <td>2023-07-08</td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
-                                    <button class="btn btn-sm btn-danger">Xóa</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td>
-                                    <div class="fw-bold">Người Thầy</div>
-                                    <small class="text-muted">Nguyễn Chí Vịnh</small>
-                                </td>
-                                <td>Truyền cảm hứng</td>
-                                <td><img src="./image/tch_nguoi-thay.jpg" width="60"></td>
-                                <td>99.000₫</td>
-                                <td>80</td>
-                                <td>2023-09-02</td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
-                                    <button class="btn btn-sm btn-danger">Xóa</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>4</td>
-                                <td>
-                                    <div class="fw-bold">Trên Đường Băng</div>
-                                    <small class="text-muted">Tony Buổi Sáng</small>
-                                </td>
-                                <td>Phát triển cá nhân</td>
-                                <td><img src="./image/ptcn_tren-duong-bang.jpg" width="60"></td>
-                                <td>75.000₫</td>
-                                <td>150</td>
-                                <td>2023-08-15</td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
-                                    <button class="btn btn-sm btn-danger">Xóa</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>5</td>
-                                <td>
-                                    <div class="fw-bold">Nhà Giả Kim</div>
-                                    <small class="text-muted">Paulo Coelho</small>
-                                </td>
-                                <td>Văn học nước ngoài</td>
-                                <td><img src="./image/vhnn_nha-gia-kim.jpg" width="60"></td>
-                                <td>120.000₫</td>
-                                <td>95</td>
-                                <td>2023-04-21</td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
-                                    <button class="btn btn-sm btn-danger">Xóa</button>
-                                </td>
+                                <td>MacBook Pro</td>
+                                <td>Laptop</td>
+                                <td>35.000.000₫</td>
+                                <td>39.200.000₫</td>
+                                <td><button class="btn btn-sm btn-primary edit-product">Sửa</button></td>
                             </tr>
                         </tbody>
-
                     </table>
                 </div>
             </div>
-            <nav>
-                <ul class="pagination pagination-lg">
-                    <li class="page-item disabled"><a class="page-link" href="#">‹</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item"><a class="page-link" href="#">›</a></li>
-                </ul>
-                <div class="info-text">Hiển thị 1–5 của 25 sản phẩm</div>
-            </nav>
         </div>
-        <script>
-            const pagination = document.querySelector(".pagination");
-            const pageItems = pagination.querySelectorAll(".page-item");
-            const infoText = document.querySelector(".info-text");
-
-            pagination.addEventListener("click", function (e) {
-                e.preventDefault();
-                const target = e.target.closest(".page-link");
-                if (!target) return;
-
-                const li = target.parentElement;
-                if (li.classList.contains("disabled")) return;
-
-                const currentActive = pagination.querySelector(".page-item.active");
-                const pages = Array.from(pageItems).filter(
-                    (item) => !item.querySelector(".page-link").textContent.match(/[‹›]/)
-                );
-
-                let currentPage = pages.indexOf(currentActive);
-                if (target.textContent === "‹" && currentPage > 0) {
-                    currentPage--;
-                } else if (target.textContent === "›" && currentPage < pages.length - 1) {
-                    currentPage++;
-                } else if (!["‹", "›"].includes(target.textContent)) {
-                    currentPage = parseInt(target.textContent) - 1;
-                }
-
-                pageItems.forEach((item) => item.classList.remove("active"));
-                pages[currentPage].classList.add("active");
-
-                pageItems[0].classList.toggle("disabled", currentPage === 0);
-                pageItems[pageItems.length - 1].classList.toggle(
-                    "disabled",
-                    currentPage === pages.length - 1
-                );
-
-                const start = currentPage * 5 + 1;
-                const end = Math.min(start + 4, 100);
-                infoText.textContent = `Hiển thị ${start}–${end} của 25 sản phẩm`;
-            });
-        </script>
-
     </section>
 
+    <!-- Modal chỉnh sửa sản phẩm -->
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProductModalLabel">Chỉnh sửa sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProductForm">
+                        <div class="mb-3">
+                            <label for="productName" class="form-label">Tên sản phẩm</label>
+                            <input type="text" class="form-control" id="productName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productCategory" class="form-label">Danh mục</label>
+                            <input type="text" class="form-control" id="productCategory">
+                        </div>
+                        <div class="mb-3">
+                            <label for="productCost" class="form-label">Giá vốn</label>
+                            <input type="text" class="form-control" id="productCost">
+                        </div>
+                        <div class="mb-3">
+                            <label for="productPrice" class="form-label">Giá bán</label>
+                            <input type="text" class="form-control" id="productPrice">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="saveProductBtn">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Script riêng tách ra -->
+    <script src="./js/manageProduct.js"></script>
 </body>
 
 </html>
