@@ -1,0 +1,70 @@
+.order-item .card {
+  border: 1px solid #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order-item .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-item img {
+  border-radius: 5px;
+}
+
+.book-item {
+  background-color: #f8f9fa;
+}
+
+.view-detail {
+  transition: all 0.2s ease;
+}
+
+.view-detail:hover {
+  background-color: #0dcaf0;
+  color: white;
+  border-color: #0dcaf0;
+}
+
+/* Nút lọc trạng thái */
+.filter-btn.active {
+  background-color: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+
+/* Modal chi tiết đơn hàng */
+.modal-content {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Hiệu ứng popup mượt mà */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tiêu đề modal */
+#orderDetailModalLabel {
+  font-weight: 700;
+  color: #333;
+}
+
+/* Danh sách sách trong popup */
+#order-detail-content .book-item {
+  background-color: #f8f9fa;
+  border: 1px solid #eee;
+}
+
+#order-detail-content img {
+  border-radius: 5px;
+}

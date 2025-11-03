@@ -1,0 +1,54 @@
+body {
+  background-color: #f8f9fa;
+}
+
+h2 {
+  font-weight: 700;
+  color: #212529;
+}
+
+.table {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.table img {
+  border-radius: 8px;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+.btn-danger {
+  transition: 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+#total-price {
+  font-size: 1.4rem;
+}
+
+/* ✅ Hai cột độc lập có thanh cuộn riêng */
+.cart-left, .cart-right {
+  height: 80vh;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.cart-left::-webkit-scrollbar,
+.cart-right::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-left::-webkit-scrollbar-thumb,
+.cart-right::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
