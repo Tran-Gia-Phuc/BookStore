@@ -1,0 +1,80 @@
+.content {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+.nav-tabs .nav-link {
+  font-weight: 500;
+  color: #555;
+  border-radius: 0.5rem 0.5rem 0 0;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #198754;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
+}
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.card h5 {
+  padding-left: 10px;
+}
+form label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.5rem;
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.btn {
+  border-radius: 0.5rem;
+}
+
+.btn-success {
+  background-color: #198754;
+  border-color: #198754;
+  transition: 0.3s;
+}
+
+.btn-success:hover {
+  background-color: #157347;
+}
+
+/* Table */
+table {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+thead.table-dark {
+  background-color: #198754 !important;
+}
+
+tbody tr:hover {
+  background-color: #f1f3f4;
+}
+
+.badge {
+  font-size: 0.85rem;   
+  padding: 0.4em 0.6em;
+}
+
+@media (max-width: 768px) {
+  .card form .col-md-4,
+  .card form .col-md-3,
+  .card form .col-md-2 {
+    width: 100%;
+  }
+}
