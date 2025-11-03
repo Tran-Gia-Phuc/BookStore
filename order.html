@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đơn hàng của tôi - MyBookStore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/order.css">
+</head>
+
+<body>
+  <!-- ✅ Navbar -->
+  <div id="navbar-container"></div>
+
+  <div class="container my-5">
+    <h2 class="text-center mb-4">📦 Đơn hàng của tôi</h2>
+
+    <!-- Bộ lọc -->
+    <div class="text-center mb-4">
+      <button class="btn btn-outline-primary mx-1 filter-btn active" data-status="all">Tất cả</button>
+      <button class="btn btn-outline-secondary mx-1 filter-btn" data-status="processing">Đang xử lý</button>
+      <button class="btn btn-outline-success mx-1 filter-btn" data-status="completed">Đã giao</button>
+      <button class="btn btn-outline-danger mx-1 filter-btn" data-status="cancelled">Đã hủy</button>
+    </div>
+
+    <!-- Danh sách đơn -->
+    <div id="order-list" class="row g-4">
+      <!-- ✅ Đơn hàng 1 -->
+      <div class="col-md-6 col-lg-4 order-item" data-status="completed">
+        <div class="card border-light shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Đơn hàng #MB1001</h5>
+            <p class="card-text small text-muted mb-3">
+              <strong>Ngày đặt:</strong> 15/10/2025<br>
+              <strong>Tổng tiền:</strong> 490,000₫<br>
+              <strong>Trạng thái:</strong> <span class="text-success fw-bold">Đã giao</span>
+            </p>
+
+            <div class="book-list">
+              <div class="book-item border rounded p-2 mb-2 d-flex align-items-center">
+                <img src="./img/dacnhantam.webp" width="50" class="me-2" alt="">
+                <div>
+                  <p class="mb-0 fw-bold">Đắc Nhân Tâm</p>
+                  <small>120,000₫ x2</small>
+                </div>
+              </div>
+              <div class="book-item border rounded p-2 d-flex align-items-center">
+                <img src="./img/10vancauhoivisao.webp" width="50" class="me-2" alt="">
+                <div>
+                  <p class="mb-0 fw-bold">10 Vạn Câu Hỏi Vì Sao</p>
+                  <small>250,000₫ x1</small>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-info w-100 mt-3 view-detail">🔍 Xem chi tiết</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ Đơn hàng 2 -->
+      <div class="col-md-6 col-lg-4 order-item" data-status="processing">
+        <div class="card border-light shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Đơn hàng #MB1002</h5>
+            <p class="card-text small text-muted mb-3">
+              <strong>Ngày đặt:</strong> 20/10/2025<br>
+              <strong>Tổng tiền:</strong> 290,000₫<br>
+              <strong>Trạng thái:</strong> <span class="text-secondary fw-bold">Đang xử lý</span>
+            </p>
+
+            <div class="book-list">
+              <div class="book-item border rounded p-2 mb-2 d-flex align-items-center">
+                <img src="./img/trenduongbang.webp" width="50" class="me-2" alt="">
+                <div>
+                  <p class="mb-0 fw-bold">Trên Đường Băng</p>
+                  <small>50,000₫ x3</small>
+                </div>
+              </div>
+              <div class="book-item border rounded p-2 d-flex align-items-center">
+                <img src="./img/tuoitredanggiabaonhieu.webp" width="50" class="me-2" alt="">
+                <div>
+                  <p class="mb-0 fw-bold">Tuổi Trẻ Đáng Giá Bao Nhiêu</p>
+                  <small>70,000₫ x2</small>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-info w-100 mt-3 view-detail">🔍 Xem chi tiết</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ Đơn hàng 3 -->
+      <div class="col-md-6 col-lg-4 order-item" data-status="cancelled">
+        <div class="card border-light shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Đơn hàng #MB1003</h5>
+            <p class="card-text small text-muted mb-3">
+              <strong>Ngày đặt:</strong> 25/10/2025<br>
+              <strong>Tổng tiền:</strong> 150,000₫<br>
+              <strong>Trạng thái:</strong> <span class="text-danger fw-bold">Đã hủy</span>
+            </p>
+
+            <div class="book-list">
+              <div class="book-item border rounded p-2 mb-2 d-flex align-items-center">
+                <img src="./img/7thoiquenthanhdat.webp" width="50" class="me-2" alt="">
+                <div>
+                  <p class="mb-0 fw-bold">7 Thói Quen Thành Đạt</p>
+                  <small>70,000₫ x1</small>
+                </div>
+              </div>
+              <div class="book-item border rounded p-2 d-flex align-items-center">
+                <img src="./img/thinkandgrowrich.webp" width="50" class="me-2" alt="">
+                <div>
+                  <p class="mb-0 fw-bold">Think And Grow Rich</p>
+                  <small>80,000₫ x1</small>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-info w-100 mt-3 view-detail">🔍 Xem chi tiết</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Modal -->
+  <div class="modal fade" id="orderDetailModal" tabindex="-1" aria-labelledby="orderDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-light shadow">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="orderDetailModalLabel">Chi tiết đơn hàng</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Đóng"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-4">
+            <h6 class="fw-bold">Thông tin người nhận</h6>
+            <p><strong>Tên:</strong> <span id="receiverName">-</span></p>
+            <p><strong>Địa chỉ:</strong> <span id="receiverAddress">-</span></p>
+          </div>
+          <hr>
+          <div id="order-detail-content"></div>
+          <hr>
+          <div class="text-end">
+            <p class="fw-bold fs-5">Tổng cộng: <span id="orderTotal">-</span></p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2025 MyBookStore | Designed by Anh Phúc đẹp trai 😎</p>
+  </footer>
+
+  <!-- ✅ Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/navbar.js"></script>
+  <script src="./js/order.js"></script>
+</body>
+</html>

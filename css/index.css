@@ -184,3 +184,10 @@ footer {
     font-size: 14px;
   }
 }
+
+.filter-btn.active {
+  background-color: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+

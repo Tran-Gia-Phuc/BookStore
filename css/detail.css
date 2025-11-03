@@ -1,0 +1,128 @@
+/* 🌟 Tổng thể */
+body {
+  background-color: #f5f7fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🌟 Khung chi tiết sách */
+.book-detail {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  transition: all 0.3s ease;
+}
+
+.book-detail:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 🌟 Ảnh sản phẩm */
+.book-img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  transition: transform 0.4s ease;
+}
+
+.book-img:hover {
+  transform: scale(1.05);
+}
+
+/* 🌟 Thông tin sách */
+.book-detail h2 {
+  font-weight: 700;
+  color: #212529;
+}
+
+.book-detail p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.book-detail strong {
+  color: #212529;
+}
+
+/* 🌟 Giá */
+.price {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.price del {
+  color: #999;
+  margin-right: 10px;
+}
+
+.price span {
+  color: #e63946;
+}
+
+/* 🌟 Nút hành động */
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+  font-weight: 500;
+  padding: 10px 20px;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.05);
+}
+
+.btn-outline-secondary {
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #e9ecef;
+  color: #000;
+  transform: scale(1.03);
+}
+
+/* 🌟 Giới thiệu */
+.book-detail hr {
+  border-top: 2px dashed #ddd;
+  margin: 20px 0;
+}
+
+.book-detail p.mt-3 {
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+}
+
+/* 🌟 Footer */
+footer {
+  background: #212529;
+  color: #f8f9fa;
+  font-size: 0.95rem;
+  margin-top: 50px;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+/* 🌟 Giỏ hàng trên navbar */
+#cartBtn {
+  position: relative;
+  font-size: 1.2rem;
+}
+
+#cart-count {
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  top: 4px;
+  right: 4px;
+}

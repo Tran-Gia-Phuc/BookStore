@@ -10,44 +10,8 @@
 
 <body>
   <!-- ✅ Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">MyBookStore</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+ <div id="navbar-container"></div>
 
-                    <li class="nav-item ms-3">
-                        <form class="d-flex" role="search" onsubmit="return false;">
-                            <input class="form-control me-2" type="search" placeholder="Tìm kiếm sách..."
-                                aria-label="Search" id="searchInput" style="max-width: 200px;" />
-                            <button class="btn btn-outline-light" type="submit" id="searchBtn">
-                                🔍
-                            </button>
-                        </form>
-                    </li>
-
-
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Books</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./index2.html">LogOut</a></li>
-
-
-                    <!-- ✅ Ảnh tròn nhỏ thay cho chữ Myself -->
-                    <li class="nav-item">
-                        <a class="nav-link p-0 ms-2" href="./infor.html">
-                            <img src="./img/information.gif" alt="Avatar động" class="rounded-circle mb-3 profile-pic"
-                                style="width: 40px; height: 40px; object-fit: cover; border: 2px solid white;">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
   <!-- ✅ Thông tin cá nhân -->
   <div class="container py-5">
@@ -117,5 +81,12 @@
   <script src="./js/infor.js"></script>
 </body>
 <script src="./js/index.js"></script>
+<script src="./js/navbar.js"></script>
+
+<script>
+  fetch('./navbar.html')
+    .then(response => response.text())
+    .then(html => document.getElementById('navbar-container').innerHTML = html);
+</script>
 
 </html>
