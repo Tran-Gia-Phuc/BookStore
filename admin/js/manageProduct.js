@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // ==================== CÁC BIẾN CHUNG ====================
     const tableBody = document.querySelector("table tbody");
     const editModal = new bootstrap.Modal(document.getElementById("editProductModal"));
     const addModal = new bootstrap.Modal(document.getElementById("addProductModal"));
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const fileInput = document.getElementById("productImage");
     const editForm = document.getElementById("editProductForm");
 
-    // Xem trước ảnh khi sửa
     fileInput.addEventListener("change", function () {
         const file = this.files[0];
         if (file) {
@@ -25,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Lưu sửa
     document.getElementById("saveProductBtn").addEventListener("click", function () {
         editModal.hide();
         showToast("Cập nhật sản phẩm thành công!");
@@ -36,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const addPreview = document.getElementById("addPreviewImage");
     const addForm = document.getElementById("addProductForm");
 
-    // Mở modal thêm
     document.getElementById("addProductBtn").addEventListener("click", () => {
         addForm.reset();
         addPreview.src = "";
@@ -44,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
         addModal.show();
     });
 
-    // Xem trước ảnh khi thêm
     addFileInput.addEventListener("change", function () {
         const file = this.files[0];
         if (file) {
@@ -59,55 +54,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Lưu thêm sản phẩm
     document.getElementById("saveAddProductBtn").addEventListener("click", function () {
         const name = document.getElementById("addProductName").value.trim();
-        const author = document.getElementById("addProductAuthor").value.trim() || "Không rõ";
-        const category = document.getElementById("addProductCategory").value.trim() || "Chưa phân loại";
-        const price = document.getElementById("addProductPrice").value.trim() || "0₫";
-        const quantity = document.getElementById("addProductQuantity").value || "0";
         const file = addFileInput.files[0];
 
         if (!name || !file) {
             alert("Vui lòng nhập tên sản phẩm và chọn ảnh!");
             return;
         }
-
-        // Tạo URL ảnh tạm (frontend)
-        const imageUrl = URL.createObjectURL(file);
-        const today = new Date().toISOString().split('T')[0];
-        const newIndex = tableBody.rows.length + 1;
-
-        // Tạo dòng mới
-        const newRow = document.createElement("tr");
-        newRow.innerHTML = `
-            <td>${newIndex}</td>
-            <td>
-                <div class="fw-bold">${name}</div>
-                <small class="text-muted">${author}</small>
-            </td>
-            <td>${category}</td>
-            <td><img src="${imageUrl}" width="60" class="rounded"></td>
-            <td>${price}</td>
-            <td>${quantity}</td>
-            <td>${today}</td>
-            <td>
-                <button class="btn btn-sm btn-primary me-2 edit-category">Sửa</button>
-                <button class="btn btn-sm btn-danger delete-category">Xóa</button>
-            </td>
-        `;
-
-        tableBody.appendChild(newRow);
         addModal.hide();
         showToast("Thêm sản phẩm thành công!");
-
-        // Gắn lại sự kiện cho nút mới
-        attachRowEvents(newRow);
     });
 
     // ==================== XỬ LÝ NÚT SỬA & XÓA ====================
     function attachRowEvents(row) {
-        // Nút Sửa
         row.querySelector(".edit-category").addEventListener("click", function () {
             const cells = row.cells;
 
@@ -123,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
             editModal.show();
         });
 
-        // Nút Xóa
         row.querySelector(".delete-category").addEventListener("click", function () {
             const name = row.cells[1].querySelector(".fw-bold").textContent.trim();
             if (confirm(`Xóa sản phẩm "${name}"?`)) {
@@ -134,17 +93,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Gắn sự kiện cho tất cả dòng hiện có
     document.querySelectorAll("table tbody tr").forEach(attachRowEvents);
 
-    // Cập nhật lại STT sau khi xóa
     function updateSTT() {
         document.querySelectorAll("table tbody tr").forEach((row, index) => {
             row.cells[0].textContent = index + 1;
         });
     }
 
-    // Toast chung
     function showToast(message) {
         const toastEl = document.createElement("div");
         toastEl.className = "toast align-items-center text-bg-success border-0";

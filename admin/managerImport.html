@@ -7,7 +7,6 @@
     <title>Quản lý nhập hàng</title>
     <link rel="stylesheet" href="./css/sidebar.css" />
     <link rel="stylesheet" href="./css/admin.css" />
-    <link rel="stylesheet" href="./css/manageProduct.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
 </head>
@@ -23,13 +22,18 @@
             <div class="sidebar">
                 <ul>
                     <li><a href="./index.html"><ion-icon name="grid-outline"></ion-icon> Tổng quan</a></li>
-                    <li><a href="./manageUser.html"><ion-icon name="people-outline"></ion-icon> Quản lý người dùng</a></li>
-                    <li><a href="./manageProduct.html"><ion-icon name="book-outline"></ion-icon> Quản lý sản phẩm</a></li>
-                    <li><a href="./manageCategory.html"><ion-icon name="bookmarks-outline"></ion-icon> Quản lý danh mục</a></li>
+                    <li><a href="./manageUser.html"><ion-icon name="people-outline"></ion-icon> Quản lý người dùng</a>
+                    </li>
+                    <li><a href="./manageProduct.html"><ion-icon name="book-outline"></ion-icon> Quản lý sản phẩm</a>
+                    </li>
+                    <li><a href="./manageCategory.html"><ion-icon name="bookmarks-outline"></ion-icon> Quản lý danh
+                            mục</a></li>
                     <li><a href="./manageOrder.html"><ion-icon name="cart-outline"></ion-icon> Quản lý đơn hàng</a></li>
-                    <li id="active"><a href="./managerImport.html"><ion-icon name="cube-outline"></ion-icon> Quản lý nhập hàng</a></li>
+                    <li id="active"><a href="./managerImport.html"><ion-icon name="cube-outline"></ion-icon> Quản lý
+                            nhập hàng</a></li>
                     <li><a href="./managePrice.html"><ion-icon name="cash-outline"></ion-icon> Quản lý giá bán</a></li>
-                    <li><a href="./manageInventory.html"><ion-icon name="archive-outline"></ion-icon> Quản lý tồn kho</a></li>
+                    <li><a href="./manageInventory.html"><ion-icon name="archive-outline"></ion-icon> Quản lý tồn
+                            kho</a></li>
                     <li><a href="./login.html"><ion-icon name="log-out-outline"></ion-icon> Đăng xuất</a></li>
                 </ul>
             </div>
@@ -67,18 +71,18 @@
                         </select>
                     </div>
                     <div class="col-md-3 d-flex gap-2 align-items-end">
-                        <button class="btn btn-success" id="searchBtn"><ion-icon name="search-outline"></ion-icon> Tìm kiếm</button>
-                        <button class="btn btn-secondary" id="resetBtn"><ion-icon name="reload-outline"></ion-icon> Đặt lại</button>
+                        <button class="btn btn-success" id="searchBtn"><ion-icon name="search-outline"></ion-icon> Tìm
+                            kiếm</button>
+                        <button class="btn btn-secondary" id="resetBtn"><ion-icon name="reload-outline"></ion-icon> Đặt
+                            lại</button>
                     </div>
                 </form>
             </div>
-
-            <!-- Nút thêm phiếu nhập -->
             <div class="d-flex justify-content-end p-3">
-                <button type="button" id="addImportBtn"
+                <a href="addImport.html"
                     class="btn btn-lg btn-warning d-flex justify-content-between align-items-center fs-4 fw-semibold text-light">
                     <ion-icon name="add-circle-sharp"></ion-icon> Thêm phiếu nhập
-                </button>
+                </a>
             </div>
 
             <div class="card shadow-sm p-4">
@@ -101,24 +105,25 @@
                                 <td>#PN001</td>
                                 <td>2025-10-01</td>
                                 <td>12</td>
-                                <td>2.500.000₫</td>
-                                <td><span class="badge rounded-pill border border-warning text-warning px-3 py-2">Đang yêu cầu</span></td>
+                                <td>1.010.000₫</td>
+                                <td><span class="badge rounded-pill border border-warning text-warning px-3 py-2">Đang
+                                        yêu cầu</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary me-2 edit-import">Sửa</button>
-                                    <button class="btn btn-sm btn-danger delete-import">Xóa</button>
+                                    <a href="importDetail.html" class="btn btn-sm btn-primary"><ion-icon
+                                            name="eye-outline"></ion-icon></a>
                                 </td>
                             </tr>
-                            <!-- Các dòng khác giữ nguyên, chỉ thay nút -->
                             <tr>
                                 <td>2</td>
                                 <td>#PN002</td>
                                 <td>2025-10-03</td>
                                 <td>8</td>
                                 <td>1.200.000₫</td>
-                                <td><span class="badge rounded-pill border border-info text-info px-3 py-2">Đang xử lý</span></td>
+                                <td><span class="badge rounded-pill border border-info text-info px-3 py-2">Đang xử
+                                        lý</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary me-2 edit-import">Sửa</button>
-                                    <button class="btn btn-sm btn-danger delete-import">Xóa</button>
+                                    <a href="importDetail.html" class="btn btn-sm btn-primary"><ion-icon
+                                            name="eye-outline"></ion-icon></a>
                                 </td>
                             </tr>
                             <tr>
@@ -127,10 +132,11 @@
                                 <td>2025-10-06</td>
                                 <td>15</td>
                                 <td>3.000.000₫</td>
-                                <td><span class="badge rounded-pill border border-primary text-primary px-3 py-2">Đang giao</span></td>
+                                <td><span class="badge rounded-pill border border-primary text-primary px-3 py-2">Đang
+                                        giao</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary me-2 edit-import">Sửa</button>
-                                    <button class="btn btn-sm btn-danger delete-import">Xóa</button>
+                                    <a href="importDetail.html" class="btn btn-sm btn-primary"><ion-icon
+                                            name="eye-outline"></ion-icon></a>
                                 </td>
                             </tr>
                             <tr>
@@ -139,10 +145,11 @@
                                 <td>2025-10-08</td>
                                 <td>20</td>
                                 <td>4.500.000₫</td>
-                                <td><span class="badge rounded-pill border border-success text-success px-3 py-2">Hoàn thành</span></td>
+                                <td><span class="badge rounded-pill border border-success text-success px-3 py-2">Hoàn
+                                        thành</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary me-2 edit-import">Sửa</button>
-                                    <button class="btn btn-sm btn-danger delete-import">Xóa</button>
+                                    <a href="importDetail.html" class="btn btn-sm btn-primary"><ion-icon
+                                            name="eye-outline"></ion-icon></a>
                                 </td>
                             </tr>
                             <tr>
@@ -151,18 +158,17 @@
                                 <td>2025-10-10</td>
                                 <td>5</td>
                                 <td>900.000₫</td>
-                                <td><span class="badge rounded-pill border border-danger text-danger px-3 py-2">Đã hủy</span></td>
+                                <td><span class="badge rounded-pill border border-danger text-danger px-3 py-2">Đã
+                                        hủy</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary me-2 edit-import">Sửa</button>
-                                    <button class="btn btn-sm btn-danger delete-import">Xóa</button>
+                                    <a href="importDetail.html" class="btn btn-sm btn-primary"><ion-icon
+                                            name="eye-outline"></ion-icon></a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-
-            <!-- Phân trang -->
             <nav>
                 <ul class="pagination pagination-lg">
                     <li class="page-item disabled"><a class="page-link" href="#">‹</a></li>
@@ -177,39 +183,8 @@
             </nav>
         </div>
 
-        <!-- Modal Sửa phiếu nhập -->
-        <div class="modal fade" id="editImportModal" tabindex="-1" aria-labelledby="editImportModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editImportModalLabel">Chỉnh sửa phiếu nhập</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="editImportForm">
-                            Tess<input type="text" class="form-control mb-3" id="editCode" placeholder="Mã phiếu" readonly>
-                            <input type="date" class="form-control mb-3" id="editDate">
-                            <input type="number" class="form-control mb-3" id="editQuantity" min="1" placeholder="Số lượng SP">
-                            <input type="text" class="form-control mb-3" id="editTotal" placeholder="Tổng tiền (VD: 2.500.000₫)">
-                            <select class="form-select" id="editStatus">
-                                <option value="Đang yêu cầu">Đang yêu cầu</option>
-                                <option value="Đang xử lý">Đang xử lý</option>
-                                <option value="Đang giao">Đang giao</option>
-                                <option value="Hoàn thành">Hoàn thành</option>
-                                <option value="Đã hủy">Đã hủy</option>
-                            </select>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="button" class="btn btn-primary" id="saveEditBtn">Lưu thay đổi</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal Thêm phiếu nhập -->
-        <div class="modal fade" id="addImportModal" tabindex="-1" aria-labelledby="addImportModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addImportModal" tabindex="-1" aria-labelledby="addImportModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -219,8 +194,10 @@
                     <div class="modal-body">
                         <form id="addImportForm">
                             <input type="date" class="form-control mb-3" id="addDate" required>
-                            <input type="number" class="form-control mb-3" id="addQuantity" min="1" placeholder="Số lượng SP" required>
-                            <input type="text" class="form-control mb-3" id="addTotal" placeholder="Tổng tiền (VD: 2.500.000₫)" required>
+                            <input type="number" class="form-control mb-3" id="addQuantity" min="1"
+                                placeholder="Số lượng SP" required>
+                            <input type="text" class="form-control mb-3" id="addTotal"
+                                placeholder="Tổng tiền (VD: 2.500.000₫)" required>
                             <select class="form-select" id="addStatus" required>
                                 <option value="" disabled selected>Chọn trạng thái</option>
                                 <option value="Đang yêu cầu">Đang yêu cầu</option>
@@ -240,7 +217,6 @@
         </div>
     </section>
 
-    <!-- Scripts -->
     <script src="./js/manageImport.js"></script>
     <script src="./js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

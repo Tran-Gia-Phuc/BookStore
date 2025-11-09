@@ -1,153 +1,89 @@
-
-/* managePrice.css */
-
-/* =======================
-   Reset cơ bản
-======================= */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
-}
-
-/* =======================
-   Navbar
-======================= */
-.navbar {
-    background-color: #fff;
-    border-bottom: 1px solid #dee2e6;
-    padding: 0.8rem 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.navbar h2 {
-    font-size: 1.8rem;
-    color: #343a40;
-    margin: 0;
-}
-
-.search-box input {
-    padding: 0.4rem 0.6rem;
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    width: 200px;
-}
-
-/* =======================
-   Tabs
-======================= */
-.nav-tabs {
-    border-bottom: 2px solid #dee2e6;
-    margin-bottom: 1rem;
+.content {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 60px;
 }
 
 .nav-tabs .nav-link {
-    font-weight: 600;
-    color: #495057;
-    padding: 0.8rem 1.2rem;
-    border: none;
-    border-radius: 0.5rem 0.5rem 0 0;
-    margin-right: 0.2rem;
-    background-color: #e9ecef;
-    transition: 0.3s;
+  font-weight: 500;
+  color: #555;
+  border-radius: 0.5rem 0.5rem 0 0;
+  transition: all 0.3s ease;
 }
-
 .nav-tabs .nav-link.active {
-    background-color: #0d6efd;
-    color: #fff;
-    font-weight: 700;
+  background-color: #198754;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.nav-tabs .nav-link:hover {
-    background-color: #0d6efd;
-    color: #fff;
-}
-
-/* =======================
-   Card
-======================= */
 .card {
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    padding: 2rem;
-    background-color: #fff;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+.card h5 {
+  padding-left: 10px;
 }
 
-/* =======================
-   Tables
-======================= */
-.table thead.table-dark th {
-    background-color: #343a40;
-    color: #fff;
-    border: none;
-    text-align: center;
+form label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.form-control,
+.form-select {
+  border-radius: 0.5rem;
+  box-shadow: none;
+  border-color: #ced4da;
+}
+.btn {
+  border-radius: 0.5rem;
+}
+.btn-success {
+  background-color: #198754;
+  border-color: #198754;
+}
+.btn-success:hover {
+  background-color: #157347;
 }
 
-.table tbody td {
-    vertical-align: middle;
-    text-align: center;
+table {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+thead.table-dark {
+  background-color: #198754 !important;
+}
+tbody tr:hover {
+  background-color: #f1f3f4;
 }
 
-.table tbody tr:hover {
-    background-color: #f1f3f5;
-    transition: 0.3s;
+/* Editable cell */
+/* Style 1: Input nhỏ gọn, viền xanh */
+.profit-cell {
+  min-width: 60px;
+  padding: 4px 8px;
+  text-align: center;
+  background: #f8fff9;
+  border: 1.5px solid #198754;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #198754;
+  transition: all 0.2s ease;
+}
+.profit-cell:focus {
+  outline: none;
+  background: #d4edda;
+  border-color: #157347;
+  box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.2);
 }
 
-.btn-primary {
-    background-color: #0d6efd;
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: #0b5ed7;
-}
-
-.btn-warning {
-    background-color: #ffc107;
-    border: none;
-}
-
-.btn-warning:hover {
-    background-color: #e0a800;
-}
-
-/* =======================
-   Form
-======================= */
-form input, form select {
-    border-radius: 0.5rem;
-    padding: 0.5rem 0.8rem;
-    border: 1px solid #ced4da;
-}
-
-/* =======================
-   Tra cứu tab
-======================= */
-#lookup form {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-/* =======================
-   Responsive
-======================= */
+/* Responsive */
 @media (max-width: 768px) {
-    .navbar h2 {
-        font-size: 1.4rem;
-    }
-
-    .search-box input {
-        width: 120px;
-    }
-
-    .nav-tabs .nav-link {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.8rem;
-    }
-
-    .card {
-        padding: 1rem;
-    }
+  .card form .col-md-5,
+  .card form .col-md-4,
+  .card form .col-md-3 {
+    width: 100%;
+  }
 }

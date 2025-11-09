@@ -1,36 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const tableBody = document.querySelector("table tbody");
     const editModal = new bootstrap.Modal(document.getElementById("editImportModal"));
     const addModal = new bootstrap.Modal(document.getElementById("addImportModal"));
-
-    let currentEditingRow = null;
-
-    // ==================== MODAL SỬA ====================
-    document.getElementById("saveEditBtn").addEventListener("click", function () {
-        if (!currentEditingRow) return;
-
-        const date = document.getElementById("editDate").value;
-        const quantity = document.getElementById("editQuantity").value;
-        const total = document.getElementById("editTotal").value;
-        const status = document.getElementById("editStatus").value;
-
-        if (!date || !quantity || !total || !status) {
-            alert("Vui lòng điền đầy đủ thông tin!");
-            return;
-        }
-
-        currentEditingRow.cells[2].textContent = date;
-        currentEditingRow.cells[3].textContent = quantity;
-        currentEditingRow.cells[4].textContent = total;
-
-        const badge = currentEditingRow.cells[5].querySelector("span");
-        badge.textContent = status;
-        badge.className = `badge rounded-pill px-3 py-2 ${getStatusClass(status)}`;
-
-        editModal.hide();
-        showToast("Cập nhật phiếu nhập thành công!");
-        currentEditingRow = null;
-    });
 
     // ==================== MODAL THÊM ====================
     document.getElementById("addImportBtn").addEventListener("click", () => {
@@ -72,56 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         attachRowEvents(newRow);
     });
 
-    // ==================== XỬ LÝ NÚT SỬA & XÓA ====================
-    function attachRowEvents(row) {
-        // Sửa
-        row.querySelector(".edit-import").addEventListener("click", function () {
-            const cells = row.cells;
-            document.getElementById("editCode").value = cells[1].textContent;
-            document.getElementById("editDate").value = cells[2].textContent;
-            document.getElementById("editQuantity").value = cells[3].textContent;
-            document.getElementById("editTotal").value = cells[4].textContent;
-            document.getElementById("editStatus").value = cells[5].querySelector("span").textContent;
-
-            currentEditingRow = row;
-            editModal.show();
-        });
-
-        // Xóa
-        row.querySelector(".delete-import").addEventListener("click", function () {
-            const code = row.cells[1].textContent;
-            if (confirm(`Xóa phiếu nhập ${code}?`)) {
-                // row.remove();
-                updateSTT();
-                showToast("Đã xóa phiếu nhập!");
-            }
-        });
-    }
-
-    // Gắn sự kiện cho tất cả dòng
-    document.querySelectorAll("tbody tr").forEach(attachRowEvents);
-
-    // Cập nhật STT
-    function updateSTT() {
-        document.querySelectorAll("tbody tr").forEach((row, i) => {
-            row.cells[0].textContent = i + 1;
-            row.cells[1].textContent = `#PN${String(i + 1).padStart(3, '0')}`;
-        });
-    }
-
-    // Lớp màu trạng thái
-    function getStatusClass(status) {
-        const map = {
-            "Đang yêu cầu": "border-warning text-warning",
-            "Đang xử lý": "border-info text-info",
-            "Đang giao": "border-primary text-primary",
-            "Hoàn thành": "border-success text-success",
-            "Đã hủy": "border-danger text-danger"
-        };
-        return map[status] || "border-secondary text-secondary";
-    }
-
-    // Toast
     function showToast(message) {
         const toastEl = document.createElement("div");
         toastEl.className = "toast align-items-center text-bg-success border-0";
