@@ -364,9 +364,15 @@
 
 
     <!-- ✅ Footer -->
-    <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p class="mb-0">© 2025 MyBookStore | Designed by Anh Phúc đẹp trai 😎</p>
-    </footer>
+   <div id="footer-placeholder"></div>
+
+<link rel="stylesheet" href="./css/footer.css">
+<script src="./js/footer.js"></script>
+<script>
+  fetch('./footer.html')
+    .then(response => response.text())
+    .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
