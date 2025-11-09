@@ -104,13 +104,7 @@ h2 {
   margin-top: 8px;
 }
 
-/* Footer */
-footer {
-  font-size: 0.95rem;
-  background-color: #2c3e50 !important;
-  color: #fff;
-  padding: 15px 0;
-}
+ 
 
 .navbar .form-control {
   background-color: rgba(255, 255, 255, 0.15);
@@ -191,3 +185,81 @@ footer {
   border-color: #1f2937 ;
 }
 
+/* ======================================
+   FOOTER & Social Icons
+====================================== */
+#footer-container {
+  width: 100%;
+  margin: 0;
+  padding: 40px 0 20px 0;
+  background-color: #212529;
+  color: #f0f0f0;
+}
+
+/* Chữ trong footer */
+#footer-container h5,
+#footer-container p {
+  color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+/* Xóa padding mặc định 2 bên container */
+#footer-container .container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Gạch ngăn cách và phần bản quyền */
+#footer-container hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#footer-container .text-center {
+  color: #ccc;
+}
+
+/* Social Icons */
+.social-icons .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #444;
+  transition: all 0.3s ease;
+}
+
+.social-icons .social-icon img {
+  display: block;
+  max-width: 60%;
+  max-height: 60%;
+  transition: transform 0.3s ease;
+}
+
+.social-icons .social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  background-color: #f04e30;
+}
+
+.social-icons .social-icon:hover img {
+  transform: scale(1.2);
+}
+
+/* Link màu trắng, bỏ gạch chân */
+#footer-container a {
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+#footer-container a:hover {
+  color: #ffcc00;
+}
+
+/* Responsive text alignment */
+@media (max-width: 767px) {
+  #footer-container .text-md-start {
+    text-align: center !important;
+  }
+}

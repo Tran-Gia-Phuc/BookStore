@@ -1,15 +1,15 @@
-<footer id="footer-container">
+<footer id="footer-container" class="text-white py-5" style="background: #222;">
   <div class="container">
     <div class="row text-center text-md-start">
       <!-- Cột 1: Về chúng tôi -->
       <div class="col-md-4 mb-4">
-        <h5 class="fw-bold">Về MyBookStore</h5>
+        <h5 class="fw-bold mb-3">Về MyBookStore</h5>
         <p>Chúng tôi mang đến những cuốn sách hay nhất, giúp bạn phát triển bản thân và thưởng thức văn học tuyệt vời.</p>
       </div>
 
       <!-- Cột 2: Liên hệ -->
       <div class="col-md-4 mb-4">
-        <h5 class="fw-bold">Liên hệ</h5>
+        <h5 class="fw-bold mb-3">Liên hệ</h5>
         <p>Email: support@mybookstore.com</p>
         <p>Hotline: 1800-123-456</p>
         <p>Địa chỉ: 123 Đường Sách, TP.HCM</p>
@@ -17,12 +17,24 @@
 
       <!-- Cột 3: Mạng xã hội -->
       <div class="col-md-4 mb-4">
-        <h5 class="fw-bold">Theo dõi chúng tôi</h5>
+        <h5 class="fw-bold mb-3">Theo dõi chúng tôi</h5>
         <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-2 social-icons">
-          <a href="#" class="text-white fs-4"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-white fs-4"><i class="fab fa-youtube"></i></a>
+          <!-- Facebook -->
+          <a href="#" class="social-icon">
+            <img src="https://cdn.simpleicons.org/facebook/ffffff" alt="Facebook" width="30" height="30">
+          </a>
+          <!-- Twitter -->
+          <a href="#" class="social-icon">
+            <img src="https://cdn.simpleicons.org/tiktok/ffffff" alt="Tiktok" width="30" height="30">
+          </a>
+          <!-- Instagram -->
+          <a href="#" class="social-icon">
+            <img src="https://cdn.simpleicons.org/instagram/ffffff" alt="Instagram" width="30" height="30">
+          </a>
+          <!-- YouTube -->
+          <a href="#" class="social-icon">
+            <img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube" width="30" height="30">
+          </a>
         </div>
       </div>
     </div>
@@ -34,3 +46,45 @@
     </div>
   </div>
 </footer>
+
+<style>
+  /* Các icon mạng xã hội */
+  .social-icons .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #444;
+    transition: all 0.3s ease;
+  }
+
+  .social-icons .social-icon img {
+    display: block;
+    max-width: 60%;
+    max-height: 60%;
+    transition: transform 0.3s ease;
+  }
+
+  .social-icons .social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    background-color: #f04e30;
+  }
+
+  .social-icons .social-icon:hover img {
+    transform: scale(1.2);
+  }
+
+  /* Responsive text alignment */
+  @media (max-width: 767px) {
+    #footer-container .text-md-start {
+      text-align: center !important;
+    }
+  }
+
+  /* Link màu trắng, bỏ gạch chân */
+  #footer-container a {
+    text-decoration: none;
+  }
+</style>
