@@ -8,11 +8,8 @@
     <link rel="stylesheet" href="./css/sidebar.css" />
     <link rel="stylesheet" href="./css/admin.css" />
     <link rel="stylesheet" href="./css/manageProduct.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
-
-
 </head>
 
 <body>
@@ -25,52 +22,22 @@
             </label>
             <div class="sidebar">
                 <ul>
-                    <li>
-                        <a href="./index.html"><ion-icon name="grid-outline"></ion-icon> Tổng quan</a>
-                    </li>
-                    <li>
-                        <a href="./manageUser.html"><ion-icon name="people-outline"></ion-icon> Quản lý người dùng</a>
-                    </li>
-                    <li>
-                        <a href="./manageProduct.html"><ion-icon name="book-outline"></ion-icon> Quản lý sản phẩm</a>
-                    </li>
-                    <li>
-                        <a href="./manageCategory.html"><ion-icon name="bookmarks-outline"></ion-icon> Quản lý danh
-                            mục</a>
-                    </li>
-                    <li>
-                        <a href="./manageOrder.html"><ion-icon name="cart-outline"></ion-icon> Quản lý đơn hàng</a>
-                    </li>
-                    <li id="active">
-                        <a href="./managerImport.html"><ion-icon name="cube-outline"></ion-icon> Quản lý nhập hàng</a>
-                    </li>
-                    <li>
-                        <a href="./managePrice.html"><ion-icon name="cash-outline"></ion-icon> Quản lý giá bán</a>
-                    </li>
-                    <li>
-                        <a href="./manageInventory.html"><ion-icon name="archive-outline"></ion-icon> Quản lý tồn
-                            kho</a>
-                    </li>
-                    <li>
-                        <a href="./login.html"><ion-icon name="log-out-outline"></ion-icon> Đăng xuất</a>
-                    </li>
+                    <li><a href="./index.html"><ion-icon name="grid-outline"></ion-icon> Tổng quan</a></li>
+                    <li><a href="./manageUser.html"><ion-icon name="people-outline"></ion-icon> Quản lý người dùng</a></li>
+                    <li><a href="./manageProduct.html"><ion-icon name="book-outline"></ion-icon> Quản lý sản phẩm</a></li>
+                    <li><a href="./manageCategory.html"><ion-icon name="bookmarks-outline"></ion-icon> Quản lý danh mục</a></li>
+                    <li><a href="./manageOrder.html"><ion-icon name="cart-outline"></ion-icon> Quản lý đơn hàng</a></li>
+                    <li id="active"><a href="./managerImport.html"><ion-icon name="cube-outline"></ion-icon> Quản lý nhập hàng</a></li>
+                    <li><a href="./managePrice.html"><ion-icon name="cash-outline"></ion-icon> Quản lý giá bán</a></li>
+                    <li><a href="./manageInventory.html"><ion-icon name="archive-outline"></ion-icon> Quản lý tồn kho</a></li>
+                    <li><a href="./login.html"><ion-icon name="log-out-outline"></ion-icon> Đăng xuất</a></li>
                 </ul>
-
             </div>
         </div>
 
         <nav class="navbar fixed-top">
             <div class="container-fluid d-flex align-items-center justify-content-between">
                 <h2>Quản lý nhập hàng</h2>
-                <div class="d-flex align-items-center gap-3">
-                    <div class="search-box">
-                        <input type="text" placeholder="Search..." />
-                    </div>
-                    <div class="icon-group">
-                        <i class="fas fa-bell"></i>
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                </div>
             </div>
         </nav>
     </header>
@@ -81,16 +48,16 @@
                 <h5 class="mb-3 fw-bold">Tìm kiếm phiếu nhập hàng</h5>
                 <form class="row g-3">
                     <div class="col-md-3">
-                        <label for="fromdate">Từ ngày: </label>
-                        <input type="date" class="form-control" placeholder="Nhập theo tên danh mục" id="fromdate"/>
+                        <label for="fromdate">Từ ngày:</label>
+                        <input type="date" class="form-control" id="fromdate" />
                     </div>
                     <div class="col-md-3">
-                        <label for="todate">Đến ngày: </label>
-                        <input type="date" class="form-control" placeholder="Nhập theo mô tả" id="todate" />
+                        <label for="todate">Đến ngày:</label>
+                        <input type="date" class="form-control" id="todate" />
                     </div>
                     <div class="col-md-3">
-                        <label for="">Tình trạng phiếu nhập hàng: </label>
-                        <select class="form-select">
+                        <label for="status">Tình trạng:</label>
+                        <select class="form-select" id="status">
                             <option selected>--Chọn tình trạng--</option>
                             <option>Đang yêu cầu</option>
                             <option>Đang xử lý</option>
@@ -99,18 +66,19 @@
                             <option>Đã hủy</option>
                         </select>
                     </div>
-                    <div class="col-md-4 d-flex gap-3">
-                        <button class="btn btn-success" id="search-user"><ion-icon name="search-outline"></ion-icon> Tìm
-                            kiếm</button>
+                    <div class="col-md-3 d-flex gap-2 align-items-end">
+                        <button class="btn btn-success" id="searchBtn"><ion-icon name="search-outline"></ion-icon> Tìm kiếm</button>
                         <button class="btn btn-secondary" id="resetBtn"><ion-icon name="reload-outline"></ion-icon> Đặt lại</button>
                     </div>
                 </form>
             </div>
 
+            <!-- Nút thêm phiếu nhập -->
             <div class="d-flex justify-content-end p-3">
-                <button type="button"
-                    class="btn btn-lg btn-warning d-flex justify-content-between align-items-center fs-4 fw-semibold text-light"><ion-icon
-                        name="add-circle-sharp"></ion-icon> Thêm phiếu nhập</button>
+                <button type="button" id="addImportBtn"
+                    class="btn btn-lg btn-warning d-flex justify-content-between align-items-center fs-4 fw-semibold text-light">
+                    <ion-icon name="add-circle-sharp"></ion-icon> Thêm phiếu nhập
+                </button>
             </div>
 
             <div class="card shadow-sm p-4">
@@ -118,13 +86,13 @@
                     <table class="table table-hover align-middle">
                         <thead class="table-dark">
                             <tr>
-                                <th scope="col">STT</th>
-                                <th scope="col">Mã phiếu</th>
-                                <th scope="col">Ngày nhập</th>
-                                <th scope="col">Số lượng sản phẩm</th>
-                                <th scope="col">Tổng tiền</th>
-                                <th scope="col">Trạng thái</th>
-                                <th scope="col">Thao tác</th>
+                                <th>STT</th>
+                                <th>Mã phiếu</th>
+                                <th>Ngày nhập</th>
+                                <th>Số lượng SP</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -134,27 +102,24 @@
                                 <td>2025-10-01</td>
                                 <td>12</td>
                                 <td>2.500.000₫</td>
+                                <td><span class="badge rounded-pill border border-warning text-warning px-3 py-2">Đang yêu cầu</span></td>
                                 <td>
-                                    <span class="badge rounded-pill border border-warning text-warning px-3 py-2">
-                                        Đang yêu cầu
-                                    </span>
+                                    <button class="btn btn-sm btn-primary me-2 edit-import">Sửa</button>
+                                    <button class="btn btn-sm btn-danger delete-import">Xóa</button>
                                 </td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>                                </td>
                             </tr>
+                            <!-- Các dòng khác giữ nguyên, chỉ thay nút -->
                             <tr>
                                 <td>2</td>
                                 <td>#PN002</td>
                                 <td>2025-10-03</td>
                                 <td>8</td>
                                 <td>1.200.000₫</td>
+                                <td><span class="badge rounded-pill border border-info text-info px-3 py-2">Đang xử lý</span></td>
                                 <td>
-                                    <span class="badge rounded-pill border border-info text-info px-3 py-2">
-                                        Đang xử lý
-                                    </span>
+                                    <button class="btn btn-sm btn-primary me-2 edit-import">Sửa</button>
+                                    <button class="btn btn-sm btn-danger delete-import">Xóa</button>
                                 </td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>                                </td>
                             </tr>
                             <tr>
                                 <td>3</td>
@@ -162,13 +127,11 @@
                                 <td>2025-10-06</td>
                                 <td>15</td>
                                 <td>3.000.000₫</td>
+                                <td><span class="badge rounded-pill border border-primary text-primary px-3 py-2">Đang giao</span></td>
                                 <td>
-                                    <span class="badge rounded-pill border border-primary text-primary px-3 py-2">
-                                        Đang giao
-                                    </span>
+                                    <button class="btn btn-sm btn-primary me-2 edit-import">Sửa</button>
+                                    <button class="btn btn-sm btn-danger delete-import">Xóa</button>
                                 </td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>                                </td>
                             </tr>
                             <tr>
                                 <td>4</td>
@@ -176,13 +139,11 @@
                                 <td>2025-10-08</td>
                                 <td>20</td>
                                 <td>4.500.000₫</td>
+                                <td><span class="badge rounded-pill border border-success text-success px-3 py-2">Hoàn thành</span></td>
                                 <td>
-                                    <span class="badge rounded-pill border border-success text-success px-3 py-2">
-                                        Hoàn thành
-                                    </span>
+                                    <button class="btn btn-sm btn-primary me-2 edit-import">Sửa</button>
+                                    <button class="btn btn-sm btn-danger delete-import">Xóa</button>
                                 </td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>                                </td>
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -190,19 +151,18 @@
                                 <td>2025-10-10</td>
                                 <td>5</td>
                                 <td>900.000₫</td>
+                                <td><span class="badge rounded-pill border border-danger text-danger px-3 py-2">Đã hủy</span></td>
                                 <td>
-                                    <span class="badge rounded-pill border border-danger text-danger px-3 py-2">
-                                        Đã hủy
-                                    </span>
+                                    <button class="btn btn-sm btn-primary me-2 edit-import">Sửa</button>
+                                    <button class="btn btn-sm btn-danger delete-import">Xóa</button>
                                 </td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>                                </td>
                             </tr>
                         </tbody>
-
                     </table>
                 </div>
             </div>
+
+            <!-- Phân trang -->
             <nav>
                 <ul class="pagination pagination-lg">
                     <li class="page-item disabled"><a class="page-link" href="#">‹</a></li>
@@ -213,71 +173,77 @@
                     <li class="page-item"><a class="page-link" href="#">5</a></li>
                     <li class="page-item"><a class="page-link" href="#">›</a></li>
                 </ul>
-                <div class="info-text">Hiển thị 1–5 của 25 phiếu nhập hàng</div>
+                <div class="info-text">Hiển thị 1–5 của 25 phiếu nhập</div>
             </nav>
         </div>
-        <script>
-            const pagination = document.querySelector(".pagination");
-            const pageItems = pagination.querySelectorAll(".page-item");
-            const infoText = document.querySelector(".info-text");
 
-            pagination.addEventListener("click", function (e) {
-                e.preventDefault();
-                const target = e.target.closest(".page-link");
-                if (!target) return;
+        <!-- Modal Sửa phiếu nhập -->
+        <div class="modal fade" id="editImportModal" tabindex="-1" aria-labelledby="editImportModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editImportModalLabel">Chỉnh sửa phiếu nhập</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editImportForm">
+                            Tess<input type="text" class="form-control mb-3" id="editCode" placeholder="Mã phiếu" readonly>
+                            <input type="date" class="form-control mb-3" id="editDate">
+                            <input type="number" class="form-control mb-3" id="editQuantity" min="1" placeholder="Số lượng SP">
+                            <input type="text" class="form-control mb-3" id="editTotal" placeholder="Tổng tiền (VD: 2.500.000₫)">
+                            <select class="form-select" id="editStatus">
+                                <option value="Đang yêu cầu">Đang yêu cầu</option>
+                                <option value="Đang xử lý">Đang xử lý</option>
+                                <option value="Đang giao">Đang giao</option>
+                                <option value="Hoàn thành">Hoàn thành</option>
+                                <option value="Đã hủy">Đã hủy</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" id="saveEditBtn">Lưu thay đổi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                const li = target.parentElement;
-                if (li.classList.contains("disabled")) return;
-
-                const currentActive = pagination.querySelector(".page-item.active");
-                const pages = Array.from(pageItems).filter(
-                    (item) => !item.querySelector(".page-link").textContent.match(/[‹›]/)
-                );
-
-                let currentPage = pages.indexOf(currentActive);
-                if (target.textContent === "‹" && currentPage > 0) {
-                    currentPage--;
-                } else if (target.textContent === "›" && currentPage < pages.length - 1) {
-                    currentPage++;
-                } else if (!["‹", "›"].includes(target.textContent)) {
-                    currentPage = parseInt(target.textContent) - 1;
-                }
-
-                pageItems.forEach((item) => item.classList.remove("active"));
-                pages[currentPage].classList.add("active");
-
-                pageItems[0].classList.toggle("disabled", currentPage === 0);
-                pageItems[pageItems.length - 1].classList.toggle(
-                    "disabled",
-                    currentPage === pages.length - 1
-                );
-
-                const start = currentPage * 5 + 1;
-                const end = Math.min(start + 4, 100);
-                infoText.textContent = `Hiển thị ${start}–${end} của 25 danh mục`;
-            });
-        </script>
-
-<script>
-    document.getElementById("resetBtn").addEventListener("click", function () {
-      const form = document.getElementById("filterForm");
-  
-      form.querySelectorAll('input[type="date"]').forEach((input) => {
-        input.value = "";
-      });
-  
-      const select = form.querySelector("select");
-      if (select) {
-        select.selectedIndex = 0;
-      }
-    });
-  </script>
+        <!-- Modal Thêm phiếu nhập -->
+        <div class="modal fade" id="addImportModal" tabindex="-1" aria-labelledby="addImportModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addImportModalLabel">Thêm phiếu nhập mới</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addImportForm">
+                            <input type="date" class="form-control mb-3" id="addDate" required>
+                            <input type="number" class="form-control mb-3" id="addQuantity" min="1" placeholder="Số lượng SP" required>
+                            <input type="text" class="form-control mb-3" id="addTotal" placeholder="Tổng tiền (VD: 2.500.000₫)" required>
+                            <select class="form-select" id="addStatus" required>
+                                <option value="" disabled selected>Chọn trạng thái</option>
+                                <option value="Đang yêu cầu">Đang yêu cầu</option>
+                                <option value="Đang xử lý">Đang xử lý</option>
+                                <option value="Đang giao">Đang giao</option>
+                                <option value="Hoàn thành">Hoàn thành</option>
+                                <option value="Đã hủy">Đã hủy</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <button type="button" class="btn btn-success" id="saveAddBtn">Thêm phiếu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <!-- Scripts -->
+    <script src="./js/manageImport.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

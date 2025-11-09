@@ -20,11 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Lưu user (chỉ hiện thông báo)
     document.getElementById("saveUserBtn").addEventListener("click", function() {
         modal.hide();
 
-        // Tạo toast thông báo
         const toast = document.createElement("div");
         toast.className = "toast align-items-center text-bg-success border-0 show";
         toast.setAttribute("role", "alert");
@@ -43,46 +41,5 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.appendChild(toast);
 
         setTimeout(() => toast.remove(), 3000);
-    });
-
-    // ==================== Pagination ====================
-    const pagination = document.querySelector(".pagination");
-    const pageItems = pagination.querySelectorAll(".page-item");
-    const infoText = document.querySelector(".info-text");
-
-    pagination.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = e.target.closest(".page-link");
-        if (!target) return;
-
-        const li = target.parentElement;
-        if (li.classList.contains("disabled")) return;
-
-        const currentActive = pagination.querySelector(".page-item.active");
-        const pages = Array.from(pageItems).filter(
-            (item) => !item.querySelector(".page-link").textContent.match(/[‹›]/)
-        );
-
-        let currentPage = pages.indexOf(currentActive);
-        if (target.textContent === "‹" && currentPage > 0) {
-            currentPage--;
-        } else if (target.textContent === "›" && currentPage < pages.length - 1) {
-            currentPage++;
-        } else if (!["‹", "›"].includes(target.textContent)) {
-            currentPage = parseInt(target.textContent) - 1;
-        }
-
-        pageItems.forEach((item) => item.classList.remove("active"));
-        pages[currentPage].classList.add("active");
-
-        pageItems[0].classList.toggle("disabled", currentPage === 0);
-        pageItems[pageItems.length - 1].classList.toggle(
-            "disabled",
-            currentPage === pages.length - 1
-        );
-
-        const start = currentPage * 5 + 1;
-        const end = Math.min(start + 4, 25); // cập nhật tổng số khách hàng nếu cần
-        infoText.textContent = `Hiển thị ${start}–${end} của 25 khách hàng`;
     });
 });

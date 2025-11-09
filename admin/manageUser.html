@@ -98,7 +98,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Dữ liệu user ví dụ -->
                             <tr>
                                 <td>1</td>
                                 <td>
@@ -110,8 +109,12 @@
                                 <td>Hà Nội</td>
                                 <td>12</td>
                                 <td>01/09/2024</td>
-                                <td><button class="btn btn-sm btn-danger">Khóa</button></td>
-                                <td><button class="btn btn-sm btn-primary me-2">Sửa</button></td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger">Khóa</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>2</td>
@@ -124,10 +127,67 @@
                                 <td>TP.HCM</td>
                                 <td>8</td>
                                 <td>14/08/2024</td>
-                                <td><button class="btn btn-sm btn-danger">Khóa</button></td>
-                                <td><button class="btn btn-sm btn-primary me-2">Sửa</button></td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger">Khóa</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
+                                </td>
                             </tr>
-                            <!-- Thêm các user khác tương tự -->
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div class="fw-bold">Lê Minh C</div>
+                                    <small class="text-muted">c.le@example.com</small>
+                                </td>
+                                <td>leminhc</td>
+                                <td>0912345678</td>
+                                <td>Đà Nẵng</td>
+                                <td>15</td>
+                                <td>22/07/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger">Khóa</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <div class="fw-bold">Phạm Thị D</div>
+                                    <small class="text-muted">d.pham@example.com</small>
+                                </td>
+                                <td>phamthid</td>
+                                <td>0934567890</td>
+                                <td>Cần Thơ</td>
+                                <td>6</td>
+                                <td>05/09/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-success">Mở</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <div class="fw-bold">Hoàng Văn E</div>
+                                    <small class="text-muted">e.hoang@example.com</small>
+                                </td>
+                                <td>hoangvane</td>
+                                <td>0976543210</td>
+                                <td>Huế</td>
+                                <td>9</td>
+                                <td>30/08/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-danger">Khóa</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2">Sửa</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -143,12 +203,11 @@
                     <li class="page-item"><a class="page-link" href="#">5</a></li>
                     <li class="page-item"><a class="page-link" href="#">›</a></li>
                 </ul>
-                <div class="info-text">Hiển thị 1–5 của 25 khách hàng</div>
+                <div class="info-text">Hiển thị 1–5 của 25 thông tin</div>
             </nav>
         </div>
     </section>
 
-    <!-- Modal chỉnh sửa user -->
     <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -199,5 +258,6 @@
 
     <!-- Script riêng tách ra -->
     <script src="./js/manageUser.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

@@ -23,18 +23,13 @@
             <div class="sidebar">
                 <ul>
                     <li><a href="./index.html"><ion-icon name="grid-outline"></ion-icon> Tổng quan</a></li>
-                    <li><a href="./manageUser.html"><ion-icon name="people-outline"></ion-icon> Quản lý người dùng</a>
-                    </li>
-                    <li><a href="./manageProduct.html"><ion-icon name="book-outline"></ion-icon> Quản lý sản phẩm</a>
-                    </li>
-                    <li id="active"><a href="./manageCategory.html"><ion-icon name="bookmarks-outline"></ion-icon> Quản
-                            lý danh mục</a></li>
+                    <li><a href="./manageUser.html"><ion-icon name="people-outline"></ion-icon> Quản lý người dùng</a></li>
+                    <li><a href="./manageProduct.html"><ion-icon name="book-outline"></ion-icon> Quản lý sản phẩm</a></li>
+                    <li id="active"><a href="./manageCategory.html"><ion-icon name="bookmarks-outline"></ion-icon> Quản lý danh mục</a></li>
                     <li><a href="./manageOrder.html"><ion-icon name="cart-outline"></ion-icon> Quản lý đơn hàng</a></li>
-                    <li><a href="./managerImport.html"><ion-icon name="cube-outline"></ion-icon> Quản lý nhập hàng</a>
-                    </li>
+                    <li><a href="./managerImport.html"><ion-icon name="cube-outline"></ion-icon> Quản lý nhập hàng</a></li>
                     <li><a href="./managePrice.html"><ion-icon name="cash-outline"></ion-icon> Quản lý giá bán</a></li>
-                    <li><a href="./manageInventory.html"><ion-icon name="archive-outline"></ion-icon> Quản lý tồn
-                            kho</a></li>
+                    <li><a href="./manageInventory.html"><ion-icon name="archive-outline"></ion-icon> Quản lý tồn kho</a></li>
                     <li><a href="./login.html"><ion-icon name="log-out-outline"></ion-icon> Đăng xuất</a></li>
                 </ul>
             </div>
@@ -59,14 +54,14 @@
                         <input type="text" class="form-control" placeholder="Nhập theo mô tả" />
                     </div>
                     <div class="col-md-3">
-                        <button class="btn btn-success" id="search-category"><ion-icon name="search-outline"></ion-icon>
-                            Tìm kiếm</button>
+                        <button class="btn btn-success" id="search-category"><ion-icon name="search-outline"></ion-icon> Tìm kiếm</button>
                     </div>
                 </form>
             </div>
 
+            <!-- Nút thêm danh mục -->
             <div class="d-flex justify-content-end p-3">
-                <button type="button"
+                <button type="button" id="addCategoryBtn"
                     class="btn btn-lg btn-warning d-flex justify-content-between align-items-center fs-4 fw-semibold text-light">
                     <ion-icon name="add-circle-sharp"></ion-icon> Thêm danh mục
                 </button>
@@ -95,9 +90,9 @@
                                 <td>
                                     <button class="btn btn-sm btn-primary me-2 edit-category">Sửa</button>
                                     <button class="btn btn-sm btn-danger delete-category">Xóa</button>
-
                                 </td>
                             </tr>
+                            <!-- Các dòng khác giữ nguyên -->
                             <tr>
                                 <td>2</td>
                                 <td>Văn học nước ngoài</td>
@@ -107,18 +102,63 @@
                                 <td>
                                     <button class="btn btn-sm btn-primary me-2 edit-category">Sửa</button>
                                     <button class="btn btn-sm btn-danger delete-category">Xóa</button>
-
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Phát triển bản thân</td>
+                                <td>35</td>
+                                <td>Sách giúp nâng cao tư duy, kỹ năng sống và sự tự tin trong cuộc sống.</td>
+                                <td>2023-06-10</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2 edit-category">Sửa</button>
+                                    <button class="btn btn-sm btn-danger delete-category">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Kinh tế - Kinh doanh</td>
+                                <td>41</td>
+                                <td>Các đầu sách về kinh tế, quản trị và đầu tư dành cho doanh nhân.</td>
+                                <td>2023-07-22</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2 edit-category">Sửa</button>
+                                    <button class="btn btn-sm btn-danger delete-category">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Thiếu nhi</td>
+                                <td>28</td>
+                                <td>Sách dành cho trẻ em, truyện cổ tích và sách giáo dục nhân cách.</td>
+                                <td>2023-09-01</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2 edit-category">Sửa</button>
+                                    <button class="btn btn-sm btn-danger delete-category">Xóa</button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            <!-- Phân trang -->
+            <nav>
+                <ul class="pagination pagination-lg">
+                    <li class="page-item disabled"><a class="page-link" href="#">‹</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">›</a></li>
+                </ul>
+                <div class="info-text">Hiển thị 1–5 của 25 thông tin</div>
+            </nav>
         </div>
 
         <!-- Modal chỉnh sửa danh mục -->
-        <div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="editCategoryModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="editCategoryModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -143,20 +183,51 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="button" class="btn btn-primary" id="saveCategoryBtn">Lưu</button>
+                        <button type="button" class="btn btn-primary" id="saveCategoryBtn">Lưu thay đổi</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Modal thêm danh mục -->
+        <div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addCategoryModalLabel">Thêm danh mục mới</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addCategoryForm">
+                            <div class="mb-3">
+                                <label for="addCategoryName" class="form-label">Tên danh mục</label>
+                                <input type="text" class="form-control" id="addCategoryName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="addCategoryQuantity" class="form-label">Số lượng sách</label>
+                                <input type="number" class="form-control" id="addCategoryQuantity" min="0" value="0">
+                            </div>
+                            <div class="mb-3">
+                                <label for="addCategoryDescription" class="form-label">Mô tả danh mục</label>
+                                <textarea class="form-control" id="addCategoryDescription" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <button type="button" class="btn btn-success" id="saveAddCategoryBtn">Thêm danh mục</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-    <!-- Script riêng tách ra -->
     <script src="./js/manageCategory.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
