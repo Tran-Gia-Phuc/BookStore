@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chỉnh sửa phiếu nhập #PN001</title>
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
+    <style>
+        .product-img { width: 40px; height: 40px; object-fit: cover; border-radius: 0.3rem; }
+        .input-number { width: 80px; }
+        .table tbody tr:hover { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="sidebar-content fixed-top">
+            <input type="checkbox" id="checkbox" />
+            <label for="checkbox">
+                <i class="fas fa-bars" id="open"></i>
+                <i class="fas fa-times" id="close"></i>
+            </label>
+            <div class="sidebar">
+                <ul>
+                    <li><a href="./index.html"><ion-icon name="grid-outline"></ion-icon> Tổng quan</a></li>
+                    <li><a href="./manageUser.html"><ion-icon name="people-outline"></ion-icon> Quản lý người dùng</a></li>
+                    <li><a href="./manageProduct.html"><ion-icon name="book-outline"></ion-icon> Quản lý sản phẩm</a></li>
+                    <li><a href="./manageCategory.html"><ion-icon name="bookmarks-outline"></ion-icon> Quản lý danh mục</a></li>
+                    <li><a href="./manageOrder.html"><ion-icon name="cart-outline"></ion-icon> Quản lý đơn hàng</a></li>
+                    <li id="active"><a href="./managerImport.html"><ion-icon name="cube-outline"></ion-icon> Quản lý nhập hàng</a></li>
+                    <li><a href="./managePrice.html"><ion-icon name="cash-outline"></ion-icon> Quản lý giá bán</a></li>
+                    <li><a href="./manageInventory.html"><ion-icon name="archive-outline"></ion-icon> Quản lý tồn kho</a></li>
+                    <li><a href="./login.html"><ion-icon name="log-out-outline"></ion-icon> Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="navbar fixed-top">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+                <h2>Chỉnh sửa phiếu nhập #PN001</h2>
+            </div>
+        </nav>
+    </header>
+
+    <section class="content mt-5 pt-5">
+        <div class="container-fluid mt-5">
+            <form id="editImportForm">
+                <div class="card shadow-sm p-4 mb-4">
+                    <h5 class="mb-3 fw-bold">Thông tin phiếu nhập</h5>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-3">
+                            <label class="form-label">Mã phiếu</label>
+                            <input type="text" class="form-control" value="#PN001" readonly>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Ngày nhập <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="importDate" value="2025-10-01" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Trạng thái</label>
+                            <select class="form-select" id="importStatus">
+                                <option value="pending" selected>Đang yêu cầu</option>
+                                <option value="approved">Đã duyệt</option>
+                                <option value="imported">Đã nhập kho</option>
+                                <option value="cancelled">Đã hủy</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm p-4 mb-4">
+                    <h5 class="mb-3 fw-bold">Chọn sản phẩm nhập</h5>
+                    <div class="row g-3">
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="searchProduct" placeholder="Tìm kiếm sách...">
+                        </div>
+                        <div class="col-md-5">
+                            <select class="form-select" id="productSelect" size="5">
+                                <option value='{"id":1,"name":"Tuổi Trẻ Đáng Giá Bao Nhiêu","author":"Rosie Nguyễn","price":80000,"img":"./image/ptbt_tuoi-tre-dang-gia-bao-nhieu.jpg"}'>Tuổi Trẻ Đáng Giá Bao Nhiêu - Rosie Nguyễn</option>
+                                <option value='{"id":2,"name":"Đắc Nhân Tâm","author":"Dale Carnegie","price":70000,"img":"./image/kns_Đắc-nhân-tâm.jpg"}'>Đắc Nhân Tâm - Dale Carnegie</option>
+                                <option value='{"id":3,"name":"Nhà Giả Kim","author":"Paulo Coelho","price":100000,"img":"./image/vhnn_nha-gia-kim.jpg"}'>Nhà Giả Kim - Paulo Coelho</option>
+                                <option value='{"id":4,"name":"Atomic Habits","author":"James Clear","price":120000,"img":"https://via.placeholder.com/60"}'>Atomic Habits - James Clear</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-center">
+                            <button type="button" class="btn btn-primary w-100" id="addToCart">Thêm vào phiếu</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm p-4">
+                    <h5 class="mb-3 fw-bold">Chi tiết phiếu nhập</h5>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle" id="importTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá nhập</th>
+                                    <th>Thành tiền</th>
+                                    <th class="text-center">Xóa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Dữ liệu mẫu có sẵn -->
+                                <tr data-id="1">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="./image/ptbt_tuoi-tre-dang-gia-bao-nhieu.jpg" class="product-img">
+                                            <div>
+                                                <div class="fw-bold">Tuổi Trẻ Đáng Giá Bao Nhiêu</div>
+                                                <small class="text-muted">Rosie Nguyễn</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="form-control input-number text-center" value="5" min="1"></td>
+                                    <td><input type="number" class="form-control input-number text-end" value="80000" min="0" step="1000"></td>
+                                    <td class="text-end amount">400.000₫</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-danger remove-item">Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="2">
+                                    <td>2</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="./image/kns_Đắc-nhân-tâm.jpg" class="product-img">
+                                            <div>
+                                                <div class="fw-bold">Đắc Nhân Tâm</div>
+                                                <small class="text-muted">Dale Carnegie</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="form-control input-number text-center" value="3" min="1"></td>
+                                    <td><input type="number" class="form-control input-number text-end" value="70000" min="0" step="1000"></td>
+                                    <td class="text-end amount">210.000₫</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-danger remove-item">Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr data-id="3">
+                                    <td>3</td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="./image/vhnn_nha-gia-kim.jpg" class="product-img">
+                                            <div>
+                                                <div class="fw-bold">Nhà Giả Kim</div>
+                                                <small class="text-muted">Paulo Coelho</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="form-control input-number text-center" value="4" min="1"></td>
+                                    <td><input type="number" class="form-control input-number text-end" value="100000" min="0" step="1000"></td>
+                                    <td class="text-end amount">400.000₫</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-sm btn-danger remove-item">Xóa</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-light rounded">
+                        <div class="row">
+                            <div class="col-8 fw-bold">Tổng sản phẩm:</div>
+                            <div class="col-4 text-end" id="totalProducts">3</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-8 fw-bold">Tổng số lượng:</div>
+                            <div class="col-4 text-end" id="totalQuantity">12</div>
+                        </div>
+                        <div class="row text-danger">
+                            <div class="col-8 fw-bold fs-5">Tổng tiền:</div>
+                            <div class="col-4 text-end fs-5" id="totalAmount">1.010.000₫</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end gap-3 mt-4">
+                    <a href="managerImport.html" class="btn btn-secondary btn-lg">Hủy</a>
+                    <button type="submit" class="btn btn-success btn-lg">Lưu phiếu nhập</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <script>
+        // Cập nhật thành tiền & tổng
+        function updateRowAmount(row) {
+            const qty = parseInt(row.querySelector('input[type="number"]:nth-child(1)').value) || 0;
+            const price = parseInt(row.querySelector('input[type="number"]:nth-child(2)').value) || 0;
+            const amount = qty * price;
+            row.querySelector('.amount').textContent = amount.toLocaleString('vi-VN') + '₫';
+            updateTotals();
+        }
+
+        function updateTotals() {
+            let totalQty = 0, totalAmt = 0, totalProd = 0;
+            document.querySelectorAll('#importTable tbody tr').forEach(row => {
+                const qty = parseInt(row.querySelector('input[type="number"]:nth-child(1)').value) || 0;
+                const price = parseInt(row.querySelector('input[type="number"]:nth-child(2)').value) || 0;
+                totalQty += qty;
+                totalAmt += qty * price;
+                totalProd++;
+            });
+            document.getElementById('totalProducts').textContent = totalProd;
+            document.getElementById('totalQuantity').textContent = totalQty;
+            document.getElementById('totalAmount').textContent = totalAmt.toLocaleString('vi-VN') + '₫';
+        }
+
+        // Thêm sản phẩm vào bảng
+        document.getElementById('addToCart').addEventListener('click', () => {
+            const select = document.getElementById('productSelect');
+            const option = select.options[select.selectedIndex];
+            if (!option) return;
+
+            const data = JSON.parse(option.value);
+            const tbody = document.querySelector('#importTable tbody');
+            const existing = tbody.querySelector(`tr[data-id="${data.id}"]`);
+            if (existing) {
+                alert('Sản phẩm đã có trong phiếu!');
+                return;
+            }
+
+            const row = document.createElement('tr');
+            row.dataset.id = data.id;
+            row.innerHTML = `
+                <td>${tbody.children.length + 1}</td>
+                <td>
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="${data.img}" class="product-img">
+                        <div>
+                            <div class="fw-bold">${data.name}</div>
+                            <small class="text-muted">${data.author}</small>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" class="form-control input-number text-center" value="1" min="1"></td>
+                <td><input type="number" class="form-control input-number text-end" value="${data.price}" min="0" step="1000"></td>
+                <td class="text-end amount">${data.price.toLocaleString('vi-VN')}₫</td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-sm btn-danger remove-item">Xóa</button>
+                </td>
+            `;
+
+            // Gắn sự kiện input
+            row.querySelectorAll('input[type="number"]').forEach(input => {
+                input.addEventListener('input', () => updateRowAmount(row));
+            });
+
+            tbody.appendChild(row);
+            updateTotals();
+        });
+
+        // Xóa sản phẩm
+        document.addEventListener('click', e => {
+            if (e.target.classList.contains('remove-item')) {
+                e.target.closest('tr').remove();
+                updateTotals();
+                // Cập nhật STT
+                document.querySelectorAll('#importTable tbody tr').forEach((row, i) => {
+                    row.querySelector('td:first-child').textContent = i + 1;
+                });
+            }
+        });
+
+        // Cập nhật khi sửa số lượng/giá
+        document.querySelectorAll('#importTable input[type="number"]').forEach(input => {
+            input.addEventListener('input', () => {
+                const row = input.closest('tr');
+                updateRowAmount(row);
+            });
+        });
+
+        // Lưu phiếu → thông báo thành công
+        document.getElementById('editImportForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const status = document.getElementById('importStatus').options[
+                document.getElementById('importStatus').selectedIndex
+            ].text;
+            alert(`Lưu thành công! Phiếu nhập #PN001 đã được cập nhật.\nTrạng thái: "${status}"`);
+            // Có thể thêm: window.location.href = 'managerImport.html';
+        });
+
+        // Khởi tạo tổng ban đầu
+        updateTotals();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

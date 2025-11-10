@@ -239,11 +239,11 @@
             </div>
             <div class="mb-3">
               <label for="productCategory" class="form-label">Danh mục</label>
-              <input type="text" class="form-control" id="productCategory">
+              <input type="number" class="form-control" id="productCategory">
             </div>
             <div class="mb-3">
               <label for="productPrice" class="form-label">Giá tiền</label>
-              <input type="text" class="form-control" id="productPrice">
+              <input type="number" class="form-control" id="productPrice">
             </div>
           </form>
         </div>
@@ -255,7 +255,6 @@
     </div>
   </div>
 
-  <!-- Modal thêm sản phẩm -->
   <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
@@ -265,7 +264,6 @@
         </div>
         <div class="modal-body">
           <form id="addProductForm">
-            <!-- Upload ảnh -->
             <div class="mb-3">
               <label for="addProductImage" class="form-label">Hình ảnh sản phẩm</label>
               <input type="file" class="form-control" id="addProductImage" accept="image/*" required>
@@ -288,7 +286,7 @@
             </div>
             <div class="mb-3">
               <label for="addProductPrice" class="form-label">Giá tiền</label>
-              <input type="text" class="form-control" id="addProductPrice" placeholder="VD: 95.000₫">
+              <input type="number" class="form-control" id="addProductPrice" placeholder="VD: 95.000₫">
             </div>
             <div class="mb-3">
               <label for="addProductQuantity" class="form-label">Số lượng</label>
