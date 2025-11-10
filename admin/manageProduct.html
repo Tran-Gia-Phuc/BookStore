@@ -238,12 +238,18 @@
               <input type="text" class="form-control" id="productName" required>
             </div>
             <div class="mb-3">
-              <label for="productCategory" class="form-label">Danh mục</label>
-              <input type="number" class="form-control" id="productCategory">
+              <label for="productCategory" class="form-label">Danh mục <span class="text-danger">*</span></label>
+              <select class="form-select" id="productCategory" required>  
+                <option value="phattrienthan" disabled selected>Phát triển bản thân</option>
+                <option value="vanhocvietnam">Văn học Việt Nam</option>
+                <option value="vanhocnuocngoai">Văn học nước ngoài</option>
+                <option value="kinhte_kinhdoanh">Kinh tế - Kinh doanh</option>
+                <option value="thieunhi">Thiếu nhi</option>
+              </select>
             </div>
             <div class="mb-3">
               <label for="productPrice" class="form-label">Giá tiền</label>
-              <input type="number" class="form-control" id="productPrice">
+              <input type="number" class="form-control" id="productPrice" value="95.000">
             </div>
           </form>
         </div>
@@ -281,8 +287,15 @@
               <input type="text" class="form-control" id="addProductAuthor">
             </div>
             <div class="mb-3">
-              <label for="addProductCategory" class="form-label">Danh mục</label>
-              <input type="text" class="form-control" id="addProductCategory">
+              <label for="productCategory" class="form-label">Danh mục <span class="text-danger">*</span></label>
+              <select class="form-select" id="productCategory" required>
+                <option value="" disabled selected>— Chọn danh mục —</option>
+                <option value="vanhocvietnam">Văn học Việt Nam</option>
+                <option value="vanhocnuocngoai">Văn học nước ngoài</option>
+                <option value="phattrienthan">Phát triển bản thân</option>
+                <option value="kinhte_kinhdoanh">Kinh tế - Kinh doanh</option>
+                <option value="thieunhi">Thiếu nhi</option>
+              </select>
             </div>
             <div class="mb-3">
               <label for="addProductPrice" class="form-label">Giá tiền</label>

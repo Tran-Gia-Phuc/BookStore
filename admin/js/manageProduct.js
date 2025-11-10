@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const cells = row.cells;
 
             editForm.productName.value = cells[1].querySelector(".fw-bold").textContent.trim();
-            editForm.productCategory.value = cells[2].textContent.trim();
-            editForm.productPrice.value = cells[4].textContent.trim();
+            // editForm.productCategory.value = cells[2].textContent.trim();
+            // editForm.productPrice.value = cells[4].textContent.trim();
 
             const imgSrc = cells[3].querySelector("img").src;
             currentImage.src = imgSrc;
