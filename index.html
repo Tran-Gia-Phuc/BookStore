@@ -59,6 +59,7 @@
   <!-- ✅ Phần danh sách sách -->
   <div class="container my-5">
     <h2 class="text-center mb-4">Danh Sách Sách</h2>
+
 <!-- ✅ Tìm kiếm nâng cao: 1 dropdown tượng trưng -->
 <div class="my-4 text-end" style="position: relative; display: inline-block; width: 250px;">
   <input type="text" class="form-control shadow-sm" placeholder="Tìm kiếm nâng cao"
@@ -86,28 +87,8 @@
   </div>
 </div>
 
-<script>
-  const input = document.getElementById('advancedSearchInput');
-  const popup = document.getElementById('advancedSearchPopup');
-  const saveBtn = document.getElementById('saveAdvancedSearch');
 
-  // Khi click vào ô input → bật/tắt popup
-  input.addEventListener('click', () => {
-    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-  });
 
-  // Nút Lưu reload trang
-  saveBtn.addEventListener('click', () => {
-    location.reload();
-  });
-
-  // Click ra ngoài → đóng popup
-  document.addEventListener('click', (e) => {
-    if (!input.contains(e.target) && !popup.contains(e.target)) {
-      popup.style.display = 'none';
-    }
-  });
-</script>
 
 
 
@@ -408,5 +389,27 @@
         .then(response => response.text())
         .then(html => document.getElementById('footer-placeholder').innerHTML = html);
     </script>
+<script>
+  const input = document.getElementById('advancedSearchInput');
+  const popup = document.getElementById('advancedSearchPopup');
+  const saveBtn = document.getElementById('saveAdvancedSearch');
+
+  // Khi click vào ô input → bật/tắt popup
+  input.addEventListener('click', () => {
+    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Nút Lưu reload trang
+  saveBtn.addEventListener('click', () => {
+    location.reload();
+  });
+
+  // Click ra ngoài → đóng popup
+  document.addEventListener('click', (e) => {
+    if (!input.contains(e.target) && !popup.contains(e.target)) {
+      popup.style.display = 'none';
+    }
+  });
+</script>
 
 </html>

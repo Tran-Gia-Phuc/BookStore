@@ -61,28 +61,7 @@
   </div>
 </div>
 
-<script>
-  const input = document.getElementById('advancedSearchInput');
-  const popup = document.getElementById('advancedSearchPopup');
-  const saveBtn = document.getElementById('saveAdvancedSearch');
 
-  // Khi click vào ô input → bật/tắt popup
-  input.addEventListener('click', () => {
-    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-  });
-
-  // Nút Lưu reload trang
-  saveBtn.addEventListener('click', () => {
-    location.reload();
-  });
-
-  // Click ra ngoài → đóng popup
-  document.addEventListener('click', (e) => {
-    if (!input.contains(e.target) && !popup.contains(e.target)) {
-      popup.style.display = 'none';
-    }
-  });
-</script>
 
 
     <div class="text-center mb-4">
@@ -372,4 +351,26 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+  const input = document.getElementById('advancedSearchInput');
+  const popup = document.getElementById('advancedSearchPopup');
+  const saveBtn = document.getElementById('saveAdvancedSearch');
+
+  // Khi click vào ô input → bật/tắt popup
+  input.addEventListener('click', () => {
+    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Nút Lưu reload trang
+  saveBtn.addEventListener('click', () => {
+    location.reload();
+  });
+
+  // Click ra ngoài → đóng popup
+  document.addEventListener('click', (e) => {
+    if (!input.contains(e.target) && !popup.contains(e.target)) {
+      popup.style.display = 'none';
+    }
+  });
+</script>
 </html>
