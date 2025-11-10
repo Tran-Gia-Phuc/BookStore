@@ -26,7 +26,45 @@
 
 
     <!-- ✅ Navbar -->
- <div id="navbar-container"></div>
+ <<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+      <a class="navbar-brand" href="#" onclick="location.reload(); return false;">MyBookStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+
+              <!-- Ô tìm kiếm -->
+              <li class="nav-item ms-3">
+                  <form class="d-flex" role="search" onsubmit="return false;">
+                      <input class="form-control me-2" type="search" placeholder="Tìm kiếm sách..."
+                          aria-label="Search" id="searchInput" style="max-width: 200px;" />
+                      <button class="btn btn-outline-light" type="submit" id="searchBtn">🔍</button>
+                  </form>
+              </li>
+
+              <li class="nav-item"><a class="nav-link" href="./index.html">Home 🏠</a></li>
+              <li class="nav-item"><a class="nav-link" href="./order.html">Đơn hàng 📋</a></li>
+              <li class="nav-item position-relative">
+                  <a class="nav-link" href="./cart.html" id="cartBtn">
+                      Giỏ hàng 🛒 <span id="cart-count"
+                          class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill"></span>
+                  </a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="./index2.html">LogOut</a></li>
+              <li class="nav-item">
+                  <a class="nav-link p-0 ms-2" href="./infor.html">
+                      <img src="./img/information.gif" alt="Avatar" class="rounded-circle profile-pic"
+                          style="width: 40px; height: 40px; object-fit: cover; border: 2px solid white;">
+                  </a>
+              </li>
+
+          </ul>
+      </div>
+  </div>
+</nav>
  <div>
   <!-- ✅ Carousel (3 ảnh chạy từ phải qua trái) -->
   <div id="bookCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
