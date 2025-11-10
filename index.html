@@ -59,6 +59,56 @@
   <!-- ✅ Phần danh sách sách -->
   <div class="container my-5">
     <h2 class="text-center mb-4">Danh Sách Sách</h2>
+<!-- ✅ Tìm kiếm nâng cao: 1 dropdown tượng trưng -->
+<div class="my-4 text-end" style="position: relative; display: inline-block; width: 250px;">
+  <input type="text" class="form-control shadow-sm" placeholder="Tìm kiếm nâng cao"
+         style="border-radius: 10px; font-weight: 500;" id="advancedSearchInput" readonly>
+  
+  <!-- Popup nội dung ẩn ban đầu -->
+  <div id="advancedSearchPopup" 
+       style="display: none; position: absolute; right: 0; top: 100%; width: 100%; background: white; 
+              border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 10; padding: 10px;">
+    <div class="mb-2">
+      <label class="form-label small">Tên</label>
+      <input type="text" class="form-control form-control-sm" placeholder="Nhập từ khóa mới nhất">
+    </div>
+    <div class="mb-2">
+      <label class="form-label small">Khoảng giá</label>
+      <input type="text" class="form-control form-control-sm" placeholder="Ví dụ: 50,000 - 200,000">
+    </div>
+    <div class="mb-2">
+      <label class="form-label small">Lượt bán</label>
+      <input type="text" class="form-control form-control-sm" placeholder="Ví dụ: > 1000">
+    </div>
+    <div class="text-end mt-2">
+      <button id="saveAdvancedSearch" class="btn btn-sm btn-primary">Lưu</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const input = document.getElementById('advancedSearchInput');
+  const popup = document.getElementById('advancedSearchPopup');
+  const saveBtn = document.getElementById('saveAdvancedSearch');
+
+  // Khi click vào ô input → bật/tắt popup
+  input.addEventListener('click', () => {
+    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Nút Lưu reload trang
+  saveBtn.addEventListener('click', () => {
+    location.reload();
+  });
+
+  // Click ra ngoài → đóng popup
+  document.addEventListener('click', (e) => {
+    if (!input.contains(e.target) && !popup.contains(e.target)) {
+      popup.style.display = 'none';
+    }
+  });
+</script>
+
 
 
 
