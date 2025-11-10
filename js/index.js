@@ -40,7 +40,7 @@ pagination.addEventListener("click", function (e) {
 
   const start = currentPage * 5 + 1;
   const end = Math.min(start + 4, 100);
-  infoText.textContent = `Hiển thị ${start}–${end} của 15 khách hàng`;
+  infoText.textContent = `Hiển thị ${start}–${end} `;
 });
  
 
@@ -98,3 +98,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
  
+const input = document.getElementById('advancedSearchInput');
+  const popup = document.getElementById('advancedSearchPopup');
+  const saveBtn = document.getElementById('saveAdvancedSearch');
+
+  // Hiện/ẩn popup khi click vào input
+  input.addEventListener('click', () => {
+    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Click ra ngoài đóng popup
+  document.addEventListener('click', (e) => {
+    if (!input.contains(e.target) && !popup.contains(e.target)) {
+      popup.style.display = 'none';
+    }
+  });
+
+  // Nút Lưu reload trang
+  saveBtn.addEventListener('click', () => {
+    location.reload();
+  });
